@@ -1,5 +1,9 @@
 
 Todo:
   ☐ List API's
+    possible API's:
+      ☐ Map Box https://www.mapbox.com/
+      ☐ TravelTek booking https://www.traveltek.com/api?campaignid=1064129004&adgroupid=52500511112&keyword=hotel%20api&matchtype=p&adposition=1t1&gclid=Cj0KCQjw37fZBRD3ARIsAJihSr1uAGk5gXprb4z4rn5VhH3BNbZya9imthlKQ2qtb6TBkWToqQB2SnoaAi5bEALw_wcB
+      ☐ Trip Advisor https://www.programmableweb.com/api/tripadvisor
   ☐ Define which librarys we want to use
 
