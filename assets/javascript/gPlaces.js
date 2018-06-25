@@ -12,11 +12,11 @@ $( document ).ready(function() {
         method: "GET"
       })
       .then(function(response) {
-          console.log(response);
+        //   console.log(response);
       });
 })
 
-$('#submitSearch').on('click', function(event) {
+$('form').submit(function(event) {
     event.preventDefault()
     locQuery += $('#location').val();
     queryURL = baseURL + locQuery + keyAPI;
@@ -26,12 +26,10 @@ $('#submitSearch').on('click', function(event) {
     }).then(function(response) {
         console.log(response.results);
         photoReference += response.results[0].photos[0].photo_reference;
+        console.log(`PhotoReference: ${photoReference}`)
+        console.log(`Photo URL for AJAX: ${photoURL + photoMaxWidth + photoReference + keyAPI}`)
+    }).then(function() {
+        $('#photoDIV').append(`<img src="${photoURL + photoMaxWidth + photoReference + keyAPI}>`)
         
-    })
-    $.ajax({
-        url: photoURL + photoMaxWidth + photoReference,
-        method: "GET"
-    }).then(function(photo){
-        console.log(photo);
     })
 })
