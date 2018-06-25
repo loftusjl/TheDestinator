@@ -15,6 +15,11 @@ Todo:
   ☐ Define which librarys we want to use
   Bootstrap Features:
     ☐ Progress Bar: https://getbootstrap.com/docs/4.1/components/progress/
+    ☐ Jumbotron : https://getbootstrap.com/docs/4.0/components/jumbotron/
+    ☐ Accordian Card: 
+    https://getbootstrap.com/docs/4.1/components/collapse/
+    ☐ Containers : https://getbootstrap.com/docs/4.1/layout/overview/
+    
   gPlaces.js Changes:
     ☐ place initial and photo ajax calls into functions
 
