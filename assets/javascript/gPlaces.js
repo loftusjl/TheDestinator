@@ -18,18 +18,21 @@ $( document ).ready(function() {
 
 $('form').submit(function(event) {
     event.preventDefault()
-    locQuery += $('#location').val();
-    queryURL = baseURL + locQuery + keyAPI;
+    let photoReference = ''; // this is obtained from the main places search
+    locQuery = 'query=' + $('#location').val();
+    queryURL = baseURL + locQuery + keyAPI; // First places request based on search textbox
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(function(response) {
         console.log(response.results);
-        photoReference += response.results[0].photos[0].photo_reference;
-        console.log(`PhotoReference: ${photoReference}`)
-        console.log(`Photo URL for AJAX: ${photoURL + photoMaxWidth + photoReference + keyAPI}`)
-    }).then(function() {
-        $('#photoDIV').append(`<img src="${photoURL + photoMaxWidth + photoReference + keyAPI}>`)
-        
+        photoReference = '&photoreference=' + response.results[0].photos[0].photo_reference;
+        console.log(`Photo URL for AJAX: ${photoURL + photoMaxWidth + photoReference + keyAPI}`);
+        if (response.results[0].photos.length > 0) {
+            $('#photoDIV').append(`<img src="${photoURL + photoMaxWidth + photoReference + keyAPI}">`)
+        } else {
+            console.log(`No photos to show`)
+        }
+
     })
 })
