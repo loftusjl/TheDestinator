@@ -6,7 +6,7 @@ let photoURL = 'https://maps.googleapis.com/maps/api/place/photo?' // base photo
 
 $('form').submit(function (event) {
     event.preventDefault()
-    let photoReference = '&photoreference='; // this is obtained from the main places search
+    let photoReference = ''; // this is obtained from the main places search
     locQuery = 'query=' + $('#location').val();
     queryURL = baseURL + locQuery + keyAPI; // First places request based on search textbox
     $.ajax({
@@ -14,7 +14,7 @@ $('form').submit(function (event) {
         method: "GET"
     }).then(function (response) {
         console.log(response.results);
-        photoReference += response.results[0].photos[0].photo_reference;
+        photoReference = '&photoreference=' + response.results[0].photos[0].photo_reference;
         console.log(`Photo URL for AJAX: ${photoURL + photoMaxWidth + photoReference + keyAPI}`);
         if (response.results[0].photos.length > 0) {
             $('#photoDIV').append(`<img src="${photoURL + photoMaxWidth + photoReference + keyAPI}">`)
