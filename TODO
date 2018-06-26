@@ -5,5 +5,28 @@ Todo:
       ☐ Map Box https://www.mapbox.com/
       ☐ TravelTek booking https://www.traveltek.com/api?campaignid=1064129004&adgroupid=52500511112&keyword=hotel%20api&matchtype=p&adposition=1t1&gclid=Cj0KCQjw37fZBRD3ARIsAJihSr1uAGk5gXprb4z4rn5VhH3BNbZya9imthlKQ2qtb6TBkWToqQB2SnoaAi5bEALw_wcB
       ☐ Trip Advisor https://www.programmableweb.com/api/tripadvisors
+  List API's:
+  ✔ Api Key for Open Weather: weatherAPI = b961c4f9e3bbb402d1f24f3534c176e3; @done(18-06-25 08:04)
+  ✔ API Key for Google Places: AIzaSyAtAoE-_wQqtKgBC2vDZ_l4Y0qnpzBaMfw @done(18-06-25 08:18)
+  API Documentation Links:
+    `Google Places: https://developers.google.com/places/web-service/search`
+    `Open Weather: https://openweathermap.org/api`
+  possible API's:
+    ☐ Map Box https://www.mapbox.com/
+    ☐ TravelTek booking https://www.traveltek.com/api?campaignid=1064129004&adgroupid=52500511112&keyword=hotel%20api&matchtype=p&adposition=1t1&gclid=Cj0KCQjw37fZBRD3ARIsAJihSr1uAGk5gXprb4z4rn5VhH3BNbZya9imthlKQ2qtb6TBkWToqQB2SnoaAi5bEALw_wcB
+    ☐ Trip Advisor https://www.programmableweb.com/api/tripadvisor @started(18-06-25 08:14)
+      ✔ Applied for API key @done(18-06-25 08:14)
+    ☐ Connect Last Minute http://connect.lastminute.com/
   ☐ Define which librarys we want to use
+  Bootstrap Features:
+    ☐ Progress Bar: https://getbootstrap.com/docs/4.1/components/progress/
+    ☐ Jumbotron : https://getbootstrap.com/docs/4.0/components/jumbotron/
+    ☐ Accordian Card: 
+    https://getbootstrap.com/docs/4.1/components/collapse/
+    ☐ Containers : https://getbootstrap.com/docs/4.1/layout/overview/
+    
+  gPlaces.js Changes:
+    ☐ place initial and photo ajax calls into functions
+
+
 
