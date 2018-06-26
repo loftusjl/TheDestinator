@@ -26,6 +26,8 @@ $('form').submit(function(event) {
         method: "GET"
     }).then(function(response) {
         console.log(response.results);
+        //creating a varible to store response results prefix
+        let results = response.results;
         photoReference = '&photoreference=' + response.results[0].photos[0].photo_reference;
         console.log(`Photo URL for AJAX: ${photoURL + photoMaxWidth + photoReference + keyAPI}`);
         if (response.results[0].photos.length > 0) {
@@ -36,3 +38,18 @@ $('form').submit(function(event) {
 
     })
 })
+
+//function for displaying attraction names
+function attracDisplay () {
+
+
+    //displaying pictures, Jesse already coded just going to copy paste WIP
+
+    //displaying address under photo
+    let $p = $('<p>');
+    let address = $p.text(results.formatted_address);
+    //displaying phone number (if available)
+    let phoneNumber = $p.text(results.formatted_phone_number);
+    //
+
+}
