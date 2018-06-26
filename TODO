@@ -30,9 +30,9 @@ Todo:
     ☐ Connect Last Minute http://connect.lastminute.com/
   ☐ Define which librarys we want to use
   Bootstrap Features:
-    ☐ Progress Bar: https://getbootstrap.com/docs/4.1/components/progress/
-    ☐ Jumbotron : https://getbootstrap.com/docs/4.0/components/jumbotron/
-    ☐ Accordian Card: https://getbootstrap.com/docs/4.1/components/collapse/
+    ✔ Progress Bar: https://getbootstrap.com/docs/4.1/components/progress/ @done(18-06-25 20:27)
+    ✔ Jumbotron : https://getbootstrap.com/docs/4.0/components/jumbotron/ @done(18-06-25 20:28)
+    ✔ Accordian Card: https://getbootstrap.com/docs/4.1/components/collapse/ @done(18-06-25 20:27)
     ☐ Containers : https://getbootstrap.com/docs/4.1/layout/overview/
     
   gPlaces.js Changes:
