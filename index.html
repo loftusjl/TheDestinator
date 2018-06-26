@@ -15,18 +15,47 @@
 </head>
 
 <body>
-    <h1>The Destinator</h1>
-    <form action="submit">
-        <div class="form-group">
-            <label for="location">Search Location</label>
-            <input class="form-control" type="text" name="location" id="location">
+    <div class="page-wrapper">
+        <!-- Jumbotron Section -->
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container title">
+                <h1 class="display-4">
+                    <span id="the">The</span>
+                    <br>Destinator</h1>
+            </div>
         </div>
-        <button type="submit" class="btn btn-primary" id="submitSearch">Submit</button>
-    </form>
-    <div id="photoDIV">
+        <!-- Main Content Section -->
+        <div class="main-content">
+            <div class="row">
 
+                <!-- Left Column -->
+                <div class="col-sm-3" id="summary">
+                    <h5>Travel Summary</h5>
+                </div>
+
+                <!-- Center Column -->
+                <div class="col-sm-6" id="display-location">
+                    <p>Location</p>
+                </div>
+
+                <!-- Right Column -->
+                <div class="col-sm-3">
+                    <form action="submit">
+                        <div class="form-group">
+                            <label for="location">Search Location</label>
+                            <input class="form-control" type="text" name="location" id="location" placeholder="Search">
+                        </div>
+                        <button type="submit" class="btn btn-primary" id="submitSearch">Submit</button>
+                    </form>
+                </div>
+            </div>
+
+
+            <div id="photoDIV">
+
+            </div>
+        </div>
     </div>
-
 
 
 
