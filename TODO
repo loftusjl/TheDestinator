@@ -1,5 +1,21 @@
+## Instructions
+* With your group, answer each of the following questions:
+  1. Who is your target audience? 
+  `Leisure Travelers`
+  2. What is the problem that the product will address?
+  `points of interest near destinations`
+  3. What is the primary goal of the product?
+  `provide a centralized resource for leisure suggestions near desired destination`
+  4. Identify and prioritize essential user stories (limit this to 3 or fewer)?
+  * Remember, your MVP should be the absolute *minimum* product that you need to pitch your idea to investors (or your classmates). Think bare essentials.
+  `As a user, I want to know what/where to go so that I can enjoy my trip more.`
+  `As a traveler I want to be able to see the weather forecast and plan accordingly`
+  `As a traveler I want to be able to budget my trip in one place`
+
+
 
 Todo:
+
   List API's:
   ✔ Api Key for Open Weather: weatherAPI = b961c4f9e3bbb402d1f24f3534c176e3; @done(18-06-25 08:04)
   ✔ API Key for Google Places: AIzaSyAtAoE-_wQqtKgBC2vDZ_l4Y0qnpzBaMfw @done(18-06-25 08:18)
@@ -16,8 +32,7 @@ Todo:
   Bootstrap Features:
     ☐ Progress Bar: https://getbootstrap.com/docs/4.1/components/progress/
     ☐ Jumbotron : https://getbootstrap.com/docs/4.0/components/jumbotron/
-    ☐ Accordian Card: 
-    https://getbootstrap.com/docs/4.1/components/collapse/
+    ☐ Accordian Card: https://getbootstrap.com/docs/4.1/components/collapse/
     ☐ Containers : https://getbootstrap.com/docs/4.1/layout/overview/
     
   gPlaces.js Changes:
