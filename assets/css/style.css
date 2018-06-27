@@ -1,3 +1,26 @@
+* {
+  margin: 0; padding: 0;
+}
+.logo {
+  position: fixed;
+  left: 40%;
+  top: 20%;
+  z-index: 1;
+}
+#container {
+  overflow: hidden;
+  height: 400px;
+  background: #edeae8;
+  position: relative;
+}
+ 
+video {
+  position: absolute;
+   
+  /* Vertical and Horizontal center*/
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+}
 #map {
     height: 100%;
   }
