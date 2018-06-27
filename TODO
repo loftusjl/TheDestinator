@@ -19,6 +19,9 @@ Todo:
   List API's:
   ✔ Api Key for Open Weather: weatherAPI = b961c4f9e3bbb402d1f24f3534c176e3; @done(18-06-25 08:04)
   ✔ API Key for Google Places: AIzaSyAtAoE-_wQqtKgBC2vDZ_l4Y0qnpzBaMfw @done(18-06-25 08:18)
+  ✔ API Key for Yelp: qlzoMPClc_UIn2xgz5qrVbK6oOcTue-cMV4Yq2Jj0lLXQd-SZAdfeGzXu_fh_62vECy4zEi_T0ixNUpJ_aooGcYfzKiij_1Ydl3fW6j0i2r8Xf-B6NX1GPmMP8AxW3Yx @done(18-06-25 21:26)
+  ✔ Yelp Client ID = VDeIKnBb7dwA3bUKJV5jdw @done(18-06-25 21:26)
+  
   API Documentation Links:
     `Google Places: https://developers.google.com/places/web-service/search`
     `Open Weather: https://openweathermap.org/api`
