@@ -2,34 +2,99 @@
 <html>
 
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Trip Advising</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
-        crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Trip Advising</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+    crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
 
 
 </head>
 
 <body>
-  <!--start progress bar-->
-  <div class='bar'>
-      <div class="progress">
-          <div class="progress-bar progress-bar-striped progress-bar-animated active" role="progressbar" aria-valuenow="0" aria-valuemin="0"
-              aria-valuemax="100" style="width: 0%"></div>
+  <!--loading gif-->
+  <div id='loading'></div>
+  <!--loading gif-->
+  <div class="page-wrapper">
+    <!-- Jumbotron Section -->
+    <div class="jumbotron jumbotron-fluid header">
+      <div class="container title">
+        <h1 class="display-4">
+          <span id="the">The</span>
+          <br>Destinator</h1>
       </div>
     </div>
-<!--end progress bar-->
-    <h1>The Destinator</h1>
-    <form action="submit">
-        <div class="form-group">
-            <input class="form-control" type="text" name="location" id="location">
+    <!-- Main Content Section -->
+    <div class="main-content">
+      <!-- Location search and display panel -->
+      <div class="row search-panel">
+        <!-- Left Column -->
+        <div class="col-sm-2 summary">
+          <h5 id="summary">TRAVEL SUMMARY</h5>
         </div>
-        <button type="submit" class="btn btn-primary" id="submitSearch">Submit</button>
-    </form>
-    <div id="findhotels">
+
+        <!-- Center Column -->
+
+        <div class="col-sm-8 display-location">
+          <h5 id="location">DISPLAY LOCATION</h5>
+        </div>
+
+        <!-- Right Column -->
+        <div class="col-sm-2">
+          <form action="submit">
+            <div class="form-group">
+              <label for="location">Search Location</label>
+              <input class="form-control" type="text" name="location" id="search" placeholder="Search">
+            </div>
+            <!-- May remove submit button and apply a onkey 'enter' event -->
+            <button type="submit" class="btn btn-primary" id="submitSearch">Submit</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Location image display -->
+      <div class="row image-panel">
+        <!-- Left Column -->
+        <!-- Possible section where we display temperature or accordion -->
+        <div class="col-sm-2 temp-display">
+          <!-- temporary holding div -->
+        </div>
+        <!-- Center Column -->
+        <div class="col-sm-8">
+          <!-- temporary holding div -->
+        </div>
+
+        <!-- Right Column -->
+        <div class="col-sm-2 fun-fact">
+          <p id="fun-fact">According to the travel_summary image, this is where an interesting fact about the location will be shown.</p>
+        </div>
+      </div>
+
+      <!-- Location Info -->
+      <div class="row info-panel">
+        <!-- Left Column -->
+        <div class="col-sm-2 flight-display">
+
+        </div>
+        <!-- Center Column -->
+        <div class="col-sm-8 location-info">
+
+        </div>
+        <!-- Right Column -->
+        <div class="col-sm-2 bottom-right">
+          <div class="row hotel-display">
+            <p>Hotel</p>
+          </div>
+          <div class="row map-display">
+            <p>Map</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--   Commented out MAP code for now. Can impliment as needed     -->
+    <!--    <div id="findhotels">
         Find hotels in:
       </div>
   
@@ -87,21 +152,26 @@
               <td class="iw_attribute_name">Website:</td>
               <td id="iw-website"></td>
             </tr>
-          </table>
-    <div id="photoDIV"></div>
+          </table> -->
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
-        crossorigin="anonymous"></script>
-    <script src="assets/javascript/moment.js"></script>
-    <script src="assets/javascript/gPlaces.js"></script>
-    <!-- <script src="places.js"></script> -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtAoE-_wQqtKgBC2vDZ_l4Y0qnpzBaMfw&libraries=places&callback=initMap"
+    <!-- Footer -->
+    <div class="footer">
+      <p id="copyright">Puff Puff Parse &copy;</p>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    crossorigin="anonymous"></script>
+  <script src="assets/javascript/moment.js"></script>
+  <!-- <script src="assets/javascript/gPlaces.js"></script> -->
+  <script src="places.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtAoE-_wQqtKgBC2vDZ_l4Y0qnpzBaMfw&libraries=places&callback=initMap"
     async defer></script>
-    <script src="assets/javascript/app.js"></script>
+  <script src="assets/javascript/app.js"></script>
 
 </body>
 
