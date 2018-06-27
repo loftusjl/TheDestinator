@@ -5,7 +5,7 @@
 .header {
     margin-bottom: 0;
     background-image: url("../images/beach.gif");
-
+    backdrop-filter: blur(13px);
     /* Full height */
     height: 100%; 
 
@@ -87,7 +87,8 @@
 }
 /* Map styles */
 #map {
-  height: 100%;
+  height: 150px;
+  width: 100%;
 }
 .map-display {
     background-color: lightgrey;
