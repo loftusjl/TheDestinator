@@ -4,20 +4,21 @@ let locQuery = 'query=';
 let photoMaxWidth = 'maxwidth=400';
 let photoURL = 'https://maps.googleapis.com/maps/api/place/photo?'
 let photoReference = '&photoreference=';
-
 let queryURL = baseURL + keyAPI;
 $( document ).ready(function() {
+   
     $.ajax({
         url: queryURL,
         method: "GET"
       })
       .then(function(response) {
-        //   console.log(response);
+           console.log(response);
       });
 })
 
 $('form').submit(function(event) {
     event.preventDefault()
+    loadingOn().show()
     let photoReference = ''; // this is obtained from the main places search
     locQuery = 'query=' + $('#location').val();
     queryURL = baseURL + locQuery + keyAPI; // First places request based on search textbox
@@ -25,6 +26,7 @@ $('form').submit(function(event) {
         url: queryURL,
         method: "GET"
     }).then(function(response) {
+        loadingOff().hide()
         console.log(response.results);
         //creating a varible to store response results prefix
         let results = response.results;
@@ -53,3 +55,13 @@ function attracDisplay () {
     //
 
 }
+
+// start progress bar
+function loadingOn() {
+    document.getElementById("loading").style.display = "block";
+}
+
+function loadingOff() {
+    document.getElementById("loading").style.display = "none";
+}
+// end progress bar
