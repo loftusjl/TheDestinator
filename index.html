@@ -45,9 +45,10 @@
           <form action="submit">
             <div class="form-group">
               <label for="location">Search Location</label>
-              <input class="form-control" type="text" name="location" id="search" placeholder="Search">
+              <div id="locationField"><input class="form-control" id="autocomplete" placeholder="Enter a city" type="text" name="location"></div>
             </div>
             <!-- May remove submit button and apply a onkey 'enter' event -->
+            <!-- Agree. Should remove. The search already does the autocomplete and changes the map location on select/enter -->
             <button type="submit" class="btn btn-primary" id="submitSearch">Submit</button>
           </form>
         </div>
@@ -87,13 +88,13 @@
             <p>Hotel</p>
           </div>
           <div class="row map-display">
-            <p>Map</p>
+              <div id="map"></div>
           </div>
         </div>
       </div>
     </div>
     <!--   Commented out MAP code for now. Can impliment as needed     -->
-    <!--    <div id="findhotels">
+       <!-- <div id="findhotels">
         Find hotels in:
       </div>
   
