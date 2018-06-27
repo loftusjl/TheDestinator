@@ -1,6 +1,7 @@
 .row {
     margin: 0;
 }
+
 #loading {
   position: fixed; 
   display: none;   
@@ -118,4 +119,3 @@
 #copyright {
   text-align: center;
   padding-top: 40px;
-}
