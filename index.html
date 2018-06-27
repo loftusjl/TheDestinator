@@ -14,14 +14,83 @@
 </head>
 
 <body>
-    <h1>The Destinator</h1>
-    <form action="submit">
-        <div class="form-group">
-            <input class="form-control" type="text" name="location" id="location">
+    <div class="page-wrapper">
+        <!-- Jumbotron Section -->
+        <div class="jumbotron jumbotron-fluid header">
+            <div class="container title">
+                <h1 class="display-4">
+                    <span id="the">The</span>
+                    <br>Destinator</h1>
+            </div>
         </div>
-        <button type="submit" class="btn btn-primary" id="submitSearch">Submit</button>
-    </form>
-    <div id="findhotels">
+        <!-- Main Content Section -->
+        <div class="main-content">
+            <!-- Location search and display panel -->
+            <div class="row search-panel">
+                <!-- Left Column -->
+                <div class="col-sm-2 summary">
+                    <h5 id="summary">TRAVEL SUMMARY</h5>
+                </div>
+
+                <!-- Center Column -->
+                <div class="col-sm-8 display-location">
+                    <h5 id="location">DISPLAY LOCATION</h5>
+                </div>
+
+                <!-- Right Column -->
+                <div class="col-sm-2">
+                    <form action="submit">
+                        <div class="form-group">
+                            <label for="location">Search Location</label>
+                            <input class="form-control" type="text" name="location" id="search" placeholder="Search">
+                        </div>
+                        <!-- May remove submit button and apply a onkey 'enter' event -->
+                        <button type="submit" class="btn btn-primary" id="submitSearch">Submit</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Location image display -->
+            <div class="row image-panel">
+                <!-- Left Column -->
+                <!-- Possible section where we display temperature or accordion -->
+                <div class="col-sm-2 temp-display">
+                    <!-- temporary holding div -->
+                </div>
+                <!-- Center Column -->
+                <div class="col-sm-8">
+                    <!-- temporary holding div -->
+                </div>
+
+                <!-- Right Column -->
+                <div class="col-sm-2 fun-fact">
+                    <p id="fun-fact">According to the travel_summary image, this is where an interesting fact about the location will be shown.</p>
+                </div>
+            </div>
+
+            <!-- Location Info -->
+            <div class="row info-panel">
+                <!-- Left Column -->
+                <div class="col-sm-2 flight-display">
+
+                </div>
+                <!-- Center Column -->
+                <div class="col-sm-8 location-info">
+
+                </div>
+                <!-- Right Column -->
+                <div class="col-sm-2 bottom-right">
+                    <div class="row hotel-display">
+                        <p>Hotel</p>
+                    </div>
+                    <div class="row map-display">
+                        <p>Map</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!--   Commented out MAP code for now. Can impliment as needed     -->
+<!--    <div id="findhotels">
         Find hotels in:
       </div>
   
@@ -79,8 +148,13 @@
               <td class="iw_attribute_name">Website:</td>
               <td id="iw-website"></td>
             </tr>
-          </table>
-    <div id="photoDIV"></div>
+          </table> -->
+
+        <!-- Footer -->
+        <div class="footer">
+            <p id="copyright">Puff Puff Parse &copy;</p>
+        </div>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>

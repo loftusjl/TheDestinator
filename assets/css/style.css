@@ -1,8 +1,96 @@
+.row {
+    margin: 0;
+}
+/* Header - Jumbotron Section */
+.header {
+    margin-bottom: 0;
+}
+
+.title {
+    text-align: center;
+}
+
+#the {
+    font-size: 26px;
+}
+
+/* Search Bar Section */
+#summary {
+    text-align: center;
+}
+
+/* Search panel */
+.search-panel {
+    max-height: 130px;
+}
+
+.summary {
+    background-color: rgb(226, 75, 75);
+}
+
+#summary {
+    padding-top: 50px;
+    color: white;
+}
+
+#location {
+    padding-top: 50px;
+    padding-left: 30px;
+}
+
+/* Image Display Panel */
+.image-panel {
+    /* Temporary background holder */
+    background-color: lightgrey;
+    min-height: 300px;
+    max-height: 500px;
+}
+
+.temp-display {
+    background-color: navy;
+}
+
+.fun-fact {
+    background-color: rgba(0, 0, 0, .1);
+}
+
+#fun-fact {
+    padding: 30px 10px;
+}
+
+/* Location Info */
+.info-panel {
+    min-height: 300px;
+}
+
+.flight-display {
+    background-color: lightblue;
+}
+
+.bottom-right {
+    padding: 0;
+}
+
+.hotel-display {
+    background-color: gray;
+    min-height: 50%;
+}
+
+.map-display {
+    background-color: lightgrey;
+    min-height: 50%;
+}
+
+/* Footer Section */
+.footer {
+    height: 100px;
+    background-color: rgb(103, 103, 248);
+}
+
+#copyright {
+    text-align: center;
+    padding-top: 40px;
+}
 #map {
     height: 100%;
   }
-  /* Optional: Makes the sample page fill the window. */
-  html, body {
-    height: 200px;
-    margin: 0;
-    padding: 0;
