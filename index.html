@@ -14,141 +14,160 @@
 </head>
 
 <body>
-  <div class="mx-auto">
-     <h1 class="logo">The Destinator</h1>
-   </div>
-  <div id="container">
-    <video autoplay muted loop>
-      <source src="./assets/images/beachVideo.mp4" type="video/mp4">
-    </video>
-  </div>  
-  <div id="findhotels">
-    Find hotels in:
+  <div class="page-wrapper">
+    <!-- Jumbotron Section -->
+    <div class="jumbotron jumbotron-fluid header">
+      <div class="container title">
+        <h1 class="display-4">
+          <span id="the">The</span>
+          <br>Destinator</h1>
+      </div>
+    </div>
+    <!-- Main Content Section -->
+    <div class="main-content">
+      <!-- Location search and display panel -->
+      <div class="row search-panel">
+        <!-- Left Column -->
+        <div class="col-sm-2 summary">
+          <h5 id="summary">TRAVEL SUMMARY</h5>
+        </div>
+
+        <!-- Center Column -->
+        <div class="col-sm-8 display-location">
+          <h5 id="location">DISPLAY LOCATION</h5>
+        </div>
+
+        <!-- Right Column -->
+        <div class="col-sm-2">
+          <form action="submit">
+            <div class="form-group">
+              <label for="location">Search Location</label>
+              <input class="form-control" type="text" name="location" id="search" placeholder="Search">
+            </div>
+            <!-- May remove submit button and apply a onkey 'enter' event -->
+            <button type="submit" class="btn btn-primary" id="submitSearch">Submit</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Location image display -->
+      <div class="row image-panel">
+        <!-- Left Column -->
+        <!-- Possible section where we display temperature or accordion -->
+        <div class="col-sm-2 temp-display">
+          <!-- temporary holding div -->
+        </div>
+        <!-- Center Column -->
+        <div class="col-sm-8">
+          <!-- temporary holding div -->
+        </div>
+
+        <!-- Right Column -->
+        <div class="col-sm-2 fun-fact">
+          <p id="fun-fact">According to the travel_summary image, this is where an interesting fact about the location will be shown.</p>
+        </div>
+      </div>
+
+      <!-- Location Info -->
+      <div class="row info-panel">
+        <!-- Left Column -->
+        <div class="col-sm-2 flight-display">
+
+        </div>
+        <!-- Center Column -->
+        <div class="col-sm-8 location-info">
+
+        </div>
+        <!-- Right Column -->
+        <div class="col-sm-2 bottom-right">
+          <div class="row hotel-display">
+            <p>Hotel</p>
+          </div>
+          <div class="row map-display">
+            <p>Map</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--   Commented out MAP code for now. Can impliment as needed     -->
+    <!--    <div id="findhotels">
+        Find hotels in:
+      </div>
+  
+      <div id="locationField">
+        <input id="autocomplete" placeholder="Enter a city" type="text" />
+      </div>
+  
+      <div id="controls">
+        <select id="country">
+          <option value="all">All</option>
+          <option value="au">Australia</option>
+          <option value="br">Brazil</option>
+          <option value="ca">Canada</option>
+          <option value="fr">France</option>
+          <option value="de">Germany</option>
+          <option value="mx">Mexico</option>
+          <option value="nz">New Zealand</option>
+          <option value="it">Italy</option>
+          <option value="za">South Africa</option>
+          <option value="es">Spain</option>
+          <option value="pt">Portugal</option>
+          <option value="us" selected>U.S.A.</option>
+          <option value="uk">United Kingdom</option>
+        </select>
+      </div>
+  
+      <div id="map"></div>
+  
+      <div id="listing">
+        <table id="resultsTable">
+          <tbody id="results"></tbody>
+        </table>
+      </div>
+  
+      <div style="display: none">
+        <div id="info-content">
+          <table>
+            <tr id="iw-url-row" class="iw_table_row">
+              <td id="iw-icon" class="iw_table_icon"></td>
+              <td id="iw-url"></td>
+            </tr>
+            <tr id="iw-address-row" class="iw_table_row">
+              <td class="iw_attribute_name">Address:</td>
+              <td id="iw-address"></td>
+            </tr>
+            <tr id="iw-phone-row" class="iw_table_row">
+              <td class="iw_attribute_name">Telephone:</td>
+              <td id="iw-phone"></td>
+            </tr>
+            <tr id="iw-rating-row" class="iw_table_row">
+              <td class="iw_attribute_name">Rating:</td>
+              <td id="iw-rating"></td>
+            </tr>
+            <tr id="iw-website-row" class="iw_table_row">
+              <td class="iw_attribute_name">Website:</td>
+              <td id="iw-website"></td>
+            </tr>
+          </table> -->
+
+    <!-- Footer -->
+    <div class="footer">
+      <p id="copyright">Puff Puff Parse &copy;</p>
+    </div>
   </div>
 
-  <div id="locationField">
-    <input id="autocomplete" placeholder="Enter a city" type="text" />
-  </div>
-
-  <div id="controls">
-    <select id="country">
-      <option value="all">All</option>
-      <option value="au">Australia</option>
-      <option value="br">Brazil</option>
-      <option value="ca">Canada</option>
-      <option value="fr">France</option>
-      <option value="de">Germany</option>
-      <option value="mx">Mexico</option>
-      <option value="nz">New Zealand</option>
-      <option value="it">Italy</option>
-      <option value="za">South Africa</option>
-      <option value="es">Spain</option>
-      <option value="pt">Portugal</option>
-      <option value="us" selected>U.S.A.</option>
-      <option value="uk">United Kingdom</option>
-    </select>
-  </div>
-
-  <div id="map"></div>
-
-  <div id="listing">
-    <table id="resultsTable">
-      <tbody id="results"></tbody>
-    </table>
-  </div>
-
-  <div style="display: none">
-    <div id="info-content">
-      <table>
-        <tr id="iw-url-row" class="iw_table_row">
-          <td id="iw-icon" class="iw_table_icon"></td>
-          <td id="iw-url"></td>
-        </tr>
-        <tr id="iw-address-row" class="iw_table_row">
-          <td class="iw_attribute_name">Address:</td>
-          <td id="iw-address"></td>
-        </tr>
-        <tr id="iw-phone-row" class="iw_table_row">
-          <td class="iw_attribute_name">Telephone:</td>
-          <td id="iw-phone"></td>
-        </tr>
-        <tr id="iw-rating-row" class="iw_table_row">
-          <td class="iw_attribute_name">Rating:</td>
-          <td id="iw-rating"></td>
-        </tr>
-        <tr id="iw-website-row" class="iw_table_row">
-          <td class="iw_attribute_name">Website:</td>
-          <td id="iw-website"></td>
-        </tr>
-      </table>
-      <div id="photoDIV"></div>
-
-      <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
-        crossorigin="anonymous"></script>
-      <!-- Video Background Script -->
-      <script>
-        var video = document.querySelector('video'),
-          container = document.querySelector('#container');
-
-        var setVideoDimensions = function () {
-          // Video's intrinsic dimensions
-          var w = video.videoWidth,
-            h = video.videoHeight;
-
-          // Intrinsic Ratio
-          // Will be more than 1 if W > H and less if W < H
-          var videoRatio = (w / h).toFixed(2);
-
-          // Get the container's computed styles
-          // Also calculate the min dimensions required (this will be
-          // the container dimentions)
-          var containerStyles = window.getComputedStyle(container),
-            minW = parseInt(containerStyles.getPropertyValue('width')),
-            minH = parseInt(containerStyles.getPropertyValue('height'));
-
-          // What's the min:intrinsic dimensions
-          //
-          // The idea is to get which of the container dimension
-          // has a higher value when compared with the equivalents
-          // of the video. Imagine a 1200x700 container and
-          // 1000x500 video. Then in order to find the right balance
-          // and do minimum scaling, we have to find the dimension
-          // with higher ratio.
-          //
-          // Ex: 1200/1000 = 1.2 and 700/500 = 1.4 - So it is best to
-          // scale 500 to 700 and then calculate what should be the
-          // right width. If we scale 1000 to 1200 then the height
-          // will become 600 proportionately.
-          var widthRatio = minW / w,
-            heightRatio = minH / h;
-
-          // Whichever ratio is more, the scaling
-          // has to be done over that dimension
-          if (widthRatio > heightRatio) {
-            var newWidth = minW;
-            var newHeight = Math.ceil(newWidth / videoRatio);
-          } else {
-            var newHeight = minH;
-            var newWidth = Math.ceil(newHeight * videoRatio);
-          }
-
-          video.style.width = newWidth + 'px';
-          video.style.height = newHeight + 'px';
-        };
-
-        video.addEventListener('loadedmetadata', setVideoDimensions, false);
-        window.addEventListener('resize', setVideoDimensions, false);
-      </script>
-      <script src="assets/javascript/moment.js"></script>
-      <!-- <script src="assets/javascript/gPlaces.js"></script> -->
-      <script src="places.js"></script>
-      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtAoE-_wQqtKgBC2vDZ_l4Y0qnpzBaMfw&libraries=places&callback=initMap"
-        async defer></script>
-      <script src="assets/javascript/app.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    crossorigin="anonymous"></script>
+  <script src="assets/javascript/moment.js"></script>
+  <!-- <script src="assets/javascript/gPlaces.js"></script> -->
+  <script src="places.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtAoE-_wQqtKgBC2vDZ_l4Y0qnpzBaMfw&libraries=places&callback=initMap"
+    async defer></script>
+  <script src="assets/javascript/app.js"></script>
 
 </body>
 
