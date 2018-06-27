@@ -4,10 +4,20 @@
 /* Header - Jumbotron Section */
 .header {
     margin-bottom: 0;
+    background-image: url("../images/beach.gif");
+
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .title {
     text-align: center;
+    z-index: 1;
 }
 
 #the {
@@ -75,7 +85,10 @@
     background-color: gray;
     min-height: 50%;
 }
-
+/* Map styles */
+#map {
+  height: 100%;
+}
 .map-display {
     background-color: lightgrey;
     min-height: 50%;
@@ -86,11 +99,7 @@
     height: 100px;
     background-color: rgb(103, 103, 248);
 }
-
 #copyright {
-    text-align: center;
-    padding-top: 40px;
+  text-align: center;
+  padding-top: 40px;
 }
-#map {
-    height: 100%;
-  }
