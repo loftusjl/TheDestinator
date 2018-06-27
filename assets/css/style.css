@@ -4,6 +4,15 @@
 /* Header - Jumbotron Section */
 .header {
     margin-bottom: 0;
+    background-image: url("../images/beach.gif");
+
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .title {
@@ -94,28 +103,3 @@
   text-align: center;
   padding-top: 40px;
 }
-/* Video Background CSS */
-* {
-  margin: 0; padding: 0;
-}
-/* .logo {
-  position: fixed;
-  left: 40%;
-  top: 20%;
-  z-index: 1;
-} */
-#container {
-  overflow: hidden;
-  height: 400px;
-  background: #edeae8;
-  position: relative;
-}
- 
-video {
-  position: absolute;
-   
-  /* Vertical and Horizontal center*/
-  left: 50%; top: 50%;
-  transform: translate(-50%, -50%);
-}
-
