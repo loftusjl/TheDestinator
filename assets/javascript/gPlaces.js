@@ -40,19 +40,32 @@ $('form').submit(function(event) {
 
     })
 })
+//function for displaying name of location user searched place in event listener
+function placeName () {
+    //can change naming convention later and jquery selector later
+    let setting = $('#autocomplete').val();
+    //displaing val inside display location
+    $('#location').text(setting)
+}
 
 //function for displaying attraction names
 function attracDisplay () {
-
+    let $p = $('<p>');
 
     //displaying pictures, Jesse already coded just going to copy paste WIP
 
+    //displaying name of place
+    let title = $p.text(results.name);
     //displaying address under photo
-    let $p = $('<p>');
     let address = $p.text(results.formatted_address);
     //displaying phone number (if available)
     let phoneNumber = $p.text(results.formatted_phone_number);
-    //
+    //displays rating
+    let rating = $p.text(results.rating);
+    //price level for user to see
+    let price = $p.text(results.price_level);
+    //printing all into info section not yet defined
+    // $('.something').append(`${title}${address}${phoneNumber}${rating}${price}`);
 
 }
 
