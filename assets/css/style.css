@@ -32,9 +32,17 @@
     background-size: cover;
 }
 
+.header h1 {
+    font-family: 'Shrikhand';
+    color: white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
 .title {
     text-align: center;
     z-index: 1;
+    margin-top: 50px;
 }
 
 #the {
@@ -68,7 +76,7 @@
 /* Image Display Panel */
 .image-panel {
     /* Temporary background holder */
-    background-color: lightgrey;
+    background-color: white;
     min-height: 300px;
     max-height: 500px;
 }
@@ -76,10 +84,10 @@
 .temp-display {
     background-color: navy;
 }
-
+/* 
 .fun-fact {
     background-color: rgba(0, 0, 0, .1);
-}
+} */
 
 #fun-fact {
     padding: 30px 10px;
@@ -87,7 +95,7 @@
 
 /* Location Info */
 .info-panel {
-    min-height: 300px;
+    min-height: 250px;
 }
 
 .flight-display {
@@ -99,17 +107,17 @@
 }
 
 .hotel-display {
-    background-color: gray;
-    min-height: 50%;
+    background-color: lightgray;
+    /* min-height: 50%; */
 }
 /* Map styles */
 #map {
-  height: 150px;
+  height: 250px;
   width: 100%;
 }
 .map-display {
     background-color: lightgrey;
-    min-height: 50%;
+    border: 1px solid gray;
 }
 
 /* Footer Section */
