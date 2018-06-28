@@ -104,6 +104,7 @@ function onPlaceChanged() {
   } else {
     document.getElementById('autocomplete').placeholder = 'Enter a city';
   }
+  yelpDisplay();
 }
 
 // Search for hotels in the selected city, within the viewport of the map.
@@ -265,4 +266,44 @@ function buildIWContent(place) {
   } else {
     document.getElementById('iw-website-row').style.display = 'none';
   }
+}
+function yelpDisplay() {
+let yelpSearch = $('#autocomplete').val();
+  console.log(yelpSearch)
+
+  // var settings = {
+  //     "async": true,
+  //     "crossDomain": true,
+  //     "url": `https://api.yelp.com/v3/businesses/search?location=${yelpSearch}`,
+  //     "method": "GET",
+  //     "headers": {
+  //       "Authorization": "Bearer qlzoMPClc_UIn2xgz5qrVbK6oOcTue-cMV4Yq2Jj0lLXQd-SZAdfeGzXu_fh_62vECy4zEi_T0ixNUpJ_aooGcYfzKiij_1Ydl3fW6j0i2r8Xf-B6NX1GPmMP8AxW3Yx",
+  //       "Cache-Control": "no-cache",
+  //       "Postman-Token": "bbcdae32-6d48-428a-8774-0c8b451ecaca"
+  //     }
+  //   }
+
+  //   $.ajax(settings).then(function(response) {
+  //       console.log(response)
+  //       for(i=0; i < response.businesses.length; i++){
+  //           $('.location-info').append(response.businesses[i].name);
+  //       }
+  //   });
+  const url = 'https://api.yelp.com/v3/businesses/search?term=delis&latitude=37.786882&longitude=-122.399972'
+  $.ajaxPrefilter(function (options) {
+    if (options.crossDomain && $.support.cors) {
+      options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
+    }
+  });
+
+  // =======================
+  // USE YOUR OWN API KEY!!!
+  // =======================
+  $.ajax(url, { headers: { Authorization: "Bearer qlzoMPClc_UIn2xgz5qrVbK6oOcTue-cMV4Yq2Jj0lLXQd-SZAdfeGzXu_fh_62vECy4zEi_T0ixNUpJ_aooGcYfzKiij_1Ydl3fW6j0i2r8Xf-B6NX1GPmMP8AxW3Yx" } })
+    .then(function(response) {
+            console.log(response)
+            for(i=0; i < response.businesses.length; i++){
+                $('.location-info').append('<p>' + response.businesses[i].name);
+            }
+        });
 }
