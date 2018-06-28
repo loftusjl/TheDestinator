@@ -45,7 +45,9 @@
           <form action="submit">
             <div class="form-group">
               <label for="location">Search Location</label>
-              <div id="locationField"><input class="form-control" id="autocomplete" placeholder="Enter a city" type="text" name="location"></div>
+              <div id="locationField">
+                <input class="form-control" id="autocomplete" placeholder="Enter a city" type="text" name="location">
+              </div>
             </div>
             <div id="controls">
               <select class="form-control" id="country">
@@ -72,11 +74,11 @@
 
       <!-- Location image display -->
       <div class="row image-panel">
-        
+
         <!-- Left Column -->
         <!-- Possible section where we display temperature or accordion -->
         <div class="col-sm-2 temp-display">
-          
+
           <!-- temporary holding div -->
         </div>
         <!-- Center Column -->
@@ -129,21 +131,54 @@
         </div>
         <!-- Center Column -->
         <div class="col-sm-8 location-info">
+          
 
         </div>
         <!-- Right Column -->
         <div class="col-sm-2 bottom-right">
           <div class="row hotel-display">
-            <p>Hotel</p>
+              <div id="listing">
+                  <table id="resultsTable">
+                    <tbody id="results"></tbody>
+                  </table>
+                </div>
+      
+                <div style="display: none">
+                  <div id="info-content">
+                    <table>
+                      <tr id="iw-url-row" class="iw_table_row">
+                        <td id="iw-icon" class="iw_table_icon"></td>
+                        <td id="iw-url"></td>
+                      </tr>
+                      <tr id="iw-address-row" class="iw_table_row">
+                        <td class="iw_attribute_name">Address:</td>
+                        <td id="iw-address"></td>
+                      </tr>
+                      <tr id="iw-phone-row" class="iw_table_row">
+                        <td class="iw_attribute_name">Telephone:</td>
+                        <td id="iw-phone"></td>
+                      </tr>
+                      <tr id="iw-rating-row" class="iw_table_row">
+                        <td class="iw_attribute_name">Rating:</td>
+                        <td id="iw-rating"></td>
+                      </tr>
+                      <tr id="iw-website-row" class="iw_table_row">
+                        <td class="iw_attribute_name">Website:</td>
+                        <td id="iw-website"></td>
+                      </tr>
+                    </table>
+                    
+                  </div>
+                </div>
           </div>
           <div class="row map-display">
-              <div id="map"></div>
+            <div id="map"></div>
           </div>
         </div>
       </div>
     </div>
     <!--   Commented out MAP code for now. Can impliment as needed     -->
-       <!-- <div id="findhotels">
+    <!-- <div id="findhotels">
         Find hotels in:
       </div>
  -->

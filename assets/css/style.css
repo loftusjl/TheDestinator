@@ -24,7 +24,7 @@
     background-image: url("../images/beach1.gif");
     backdrop-filter: blur(13px);
     /* Full height */
-    height: 100%; 
+    height: 500px; 
 
     /* Center and scale the image nicely */
     background-position: center;
@@ -48,7 +48,7 @@
 
 /* Search panel */
 .search-panel {
-    max-height: 130px;
+    min-height: 130px;
 }
 
 .summary {
