@@ -280,9 +280,7 @@ let yelpSearch = $('#autocomplete').val();
     }
   });
 
-  // =======================
-  // USE YOUR OWN API KEY!!!
-  // =======================
+// Yelp Search Business and push to DOM
   $.ajax(url, { headers: { Authorization: "Bearer qlzoMPClc_UIn2xgz5qrVbK6oOcTue-cMV4Yq2Jj0lLXQd-SZAdfeGzXu_fh_62vECy4zEi_T0ixNUpJ_aooGcYfzKiij_1Ydl3fW6j0i2r8Xf-B6NX1GPmMP8AxW3Yx" } })
     .then(function(response) {
             console.log(response)
@@ -310,4 +308,30 @@ let yelpSearch = $('#autocomplete').val();
             </div>`)
             }
         });
+}
+
+// PLOT MARKERS ON GOOGLE MAP
+var markers;
+var bounds;
+
+function plotMarkers(m)
+{
+  markers = [];
+  bounds = new google.maps.LatLngBounds();
+
+  m.forEach(function (marker) {
+    var position = new google.maps.LatLng(marker.lat, marker.lng);
+
+    markers.push(
+      new google.maps.Marker({
+        position: position,
+        map: map,
+        animation: google.maps.Animation.DROP
+      })
+    );
+
+    bounds.extend(position);
+  });
+
+  map.fitBounds(bounds);
 }
