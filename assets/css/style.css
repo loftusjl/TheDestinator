@@ -24,7 +24,7 @@
     background-image: url("../images/beach.gif");
     backdrop-filter: blur(13px);
     /* Full height */
-    height: 500px; 
+    height: 250px; 
 
     /* Center and scale the image nicely */
     background-position: center;
@@ -42,7 +42,7 @@
 .title {
     text-align: center;
     z-index: 1;
-    margin-top: 50px;
+    margin-top: 1%;
 }
 
 #the {
