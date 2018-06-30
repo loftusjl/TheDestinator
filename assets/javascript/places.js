@@ -105,6 +105,7 @@ function onPlaceChanged() {
   } else {
     document.getElementById('autocomplete').placeholder = 'Enter a city';
   }
+  weatherForcast();
   yelpDisplay();
 }
 
