@@ -82,16 +82,15 @@
           <!-- temporary holding div -->
         </div>
         <!-- Center Column -->
-        <div class="col-sm-8">
+        <div class="col-sm-8" id="contentTabs">
           <!-- CONTENT TABS -->
             <div id="exTab1" class="container">	
-                <ul  class="nav nav-pills nav-fill">
-                      <li class="active">
-                        <a  href="#1a" data-toggle="tab">Hotels</a>
+                <ul  class="nav nav-pills d-flex bg-primary">
+                      <li class="mx-auto"><a href="#1a" class="active btn btn-primary" data-toggle="tab">Hotels</a>
                       </li>
-                      <li><a href="#2a" data-toggle="tab">Restaurants</a>
+                      <li class="mx-auto"><a href="#2a" class="btn btn-primary" data-toggle="tab">Restaurants</a>
                       </li>
-                      <li><a href="#3a" data-toggle="tab">Points of Interest</a>
+                      <li class="mx-auto"><a href="#3a" class="btn btn-primary" data-toggle="tab">Points of Interest</a>
                       </li>
                     </ul>
                 
@@ -150,8 +149,10 @@
         </div>
 
         <!-- Right Column -->
-        <div class="col-sm-2 fun-fact">
-          <!-- <p id="fun-fact">According to the travel_summary image, this is where an interesting fact about the location will be shown.</p> -->
+        <div class="col-sm-2 map">
+            <div class="row map-display">
+                <div id="map"></div>
+              </div>
         </div>
       </div>
 
@@ -168,18 +169,11 @@
         </div>
         <!-- Right Column -->
         <div class="col-sm-2 bottom-right">
-          <div class="row map-display">
-            <div id="map"></div>
-          </div>
+          
          
         </div>
       </div>
     </div>
-    <!--   Commented out MAP code for now. Can impliment as needed     -->
-    <!-- <div id="findhotels">
-        Find hotels in:
-      </div>
- -->
 
     <!-- Footer -->
     <div class="footer">
