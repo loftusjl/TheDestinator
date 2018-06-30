@@ -1,4 +1,4 @@
-# Team Name: The Destinator
+# [Team Name: The Destinator](https://loftusjl.github.io/Project1/)
 
 A travel site to suggest activities located around chosen destinations. Includes attractions, lodging, and weather forecast.
 
