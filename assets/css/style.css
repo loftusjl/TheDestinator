@@ -1,7 +1,10 @@
 .row {
     margin: 0;
 }
-
+/* .active a{
+    color: #ededed;
+    font-weight: bold;
+} */
 #loading {
   position: fixed; 
   display: none;   
