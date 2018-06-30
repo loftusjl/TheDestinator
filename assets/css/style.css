@@ -1,10 +1,10 @@
 .row {
     margin: 0;
 }
-/* .active a{
-    color: #ededed;
-    font-weight: bold;
-} */
+#exTab1, #contentTabs {
+    margin: 0;
+    padding: 0;
+}
 #loading {
   position: fixed; 
   display: none;   
@@ -117,6 +117,10 @@
 #map {
   height: 250px;
   width: 100%;
+}
+.map {
+    padding: 0;
+    height: 100%;
 }
 .map-display {
     background-color: lightgrey;
