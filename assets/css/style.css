@@ -5,6 +5,11 @@
     margin: 0;
     padding: 0;
 }
+
+#exTab1 {
+    max-width: 100%;
+}
+
 #loading {
   position: fixed; 
   display: none;   
