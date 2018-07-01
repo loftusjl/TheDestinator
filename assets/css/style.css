@@ -182,9 +182,15 @@ body {
 .devs {
     text-align: center;
 }
+
 .devs p {
     color: white;
     display: inline-block;
     margin-right: 10px;
     margin-left: 10px;
+}
+/* styling for dynamic images in accordion */
+.resImg {
+    width: 250px;
+
 }
