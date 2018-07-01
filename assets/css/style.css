@@ -92,6 +92,15 @@ body {
 
 /* Image Display Panel */
 /* Tabs */
+#resultsTable:hover {
+    cursor: pointer;
+}
+
+#listing,
+#resultsTable {
+    width: 100%;
+}
+
 #exTab1, #contentTabs {
     margin: 0;
     padding: 0;
@@ -110,7 +119,9 @@ body {
 #accordion {
     position: relative;
     height: 100%;
+    font-family: 'Poppins';
 }
+
 
 .image-panel {
     /* Temporary background holder */
@@ -157,10 +168,13 @@ body {
   min-height: 300px;
   width: 100%;
 }
+
 .map {
-    padding: 0;
+    padding: 0 5px;
     height: 100%;
+    max-height: 300px;
 }
+
 .map-display {
     background-color: lightgrey;
     border: 1px solid gray;
@@ -172,6 +186,7 @@ body {
     background-color: rgb(103, 103, 248);
     bottom: 0px;
     width: 100%;
+    position: absolute;
 }
 
 #copyright {

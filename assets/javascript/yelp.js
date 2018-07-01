@@ -22,7 +22,7 @@ function yelpDisplay() {
                   <div class="card-header" id="heading${i}">
                     <h5 class="mb-0">
                       <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse${i}" aria-expanded="true" aria-controls="collapse${i}">
-                        ${business[i].name}  Rating: ${business[i].rating}  Price: ${business[i].price}
+                        ${business[i].name} &nbsp;|&nbsp; Rating: ${business[i].rating} &nbsp;|&nbsp;  Price: ${business[i].price}
                       </button>
                     </h5>
                   </div>
