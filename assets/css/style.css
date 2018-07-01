@@ -143,3 +143,7 @@
   padding-top: 40px;
 
 }
+/* styling for dynamic images in accordion */
+.resImg {
+    width: 250px;
+}
