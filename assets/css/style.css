@@ -1,14 +1,17 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
 .row {
     margin: 0;
 }
-#exTab1, #contentTabs {
-    margin: 0;
-    padding: 0;
-}
 
-#exTab1 {
-    max-width: 100%;
-}
 
 #loading {
   position: fixed; 
@@ -57,6 +60,11 @@
     font-size: 26px;
 }
 
+/* Main content */
+.main-content {
+    height: calc(100vh - 400px);
+}
+
 /* Search Bar Section */
 #summary {
     text-align: center;
@@ -81,21 +89,51 @@
     padding-left: 30px;
 }
 
+
 /* Image Display Panel */
+/* Tabs */
+#resultsTable:hover {
+    cursor: pointer;
+}
+
+#listing,
+#resultsTable {
+    width: 100%;
+}
+
+#exTab1, #contentTabs {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    position: relative;
+}
+
+#exTab1 {
+    width: 100%;
+    height: 100%;
+}
+
+/* ------ */
+
+.tab-content {
+    position: relative;
+    max-height: 400px;
+    overflow-y: scroll;
+}
+#accordion {
+    position: relative;
+    height: 100%;
+    font-family: 'Poppins';
+}
+
+
 .image-panel {
     /* Temporary background holder */
     background-color: white;
-    min-height: 300px;
-    max-height: 500px;
+    height: calc(100vh - 530px);
+    position: relative;
 }
 
-.temp-display {
-    background-color: navy;
-}
-/* 
-.fun-fact {
-    background-color: rgba(0, 0, 0, .1);
-} */
 
 #fun-fact {
     padding: 30px 10px;
@@ -106,27 +144,35 @@
     min-height: 250px;
 }
 
-.flight-display {
-    background-color: lightblue;
+.location-info {
+    z-index: -1;
 }
+
+/* .flight-display {
+    background-color: lightblue;
+} */
 
 .bottom-right {
     padding: 0;
 }
 
 .hotel-display {
-    background-color: lightgray;
-    /* min-height: 50%; */
+    background-color: white;
+    height: 100%;
+    position: relative;
 }
 /* Map styles */
 #map {
-  height: 250px;
+  min-height: 300px;
   width: 100%;
 }
+
 .map {
-    padding: 0;
+    padding: 0 5px;
     height: 100%;
+    max-height: 300px;
 }
+
 .map-display {
     background-color: lightgrey;
     border: 1px solid gray;
@@ -134,16 +180,50 @@
 
 /* Footer Section */
 .footer {
-    height: 100px;
+    height: 150px;
     background-color: rgb(103, 103, 248);
+    bottom: 0px;
+    width: 100%;
+    position: absolute;
 }
+
 #copyright {
   text-align: center;
-
   padding-top: 40px;
+}
 
+.devs {
+    text-align: center;
+}
+
+.devs p {
+    color: white;
+    display: inline-block;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 /* styling for dynamic images in accordion */
 .resImg {
     width: 250px;
+
 }
+
+@media screen and (min-height: 700px) {
+    .tab-content {
+        height: 200px;
+    }
+}
+
+@media screen and (min-height: 850px) {
+    .tab-content {
+        height: 250px;
+    }
+} 
+
+@media screen and (min-height: 900px) {
+    .tab-content {
+        height: 350px;
+    }
+}
+
+

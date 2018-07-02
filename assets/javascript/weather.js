@@ -60,6 +60,31 @@ $.ajax({
 
  // }
   
+<<<<<<< HEAD
 };
 }
 
+=======
+});
+}
+//api call for longitude latitude WIP
+function geocodeLongLat(){
+  let locSearch = $('#autocomplete').val();
+  let queryURL = `https://maps.googleapis.com/maps/api/geocode/json?address=${locSearch}&key=AIzaSyAtAoE-_wQqtKgBC2vDZ_l4Y0qnpzBaMfw`
+
+  $.ajax({
+    url: queryURL,
+    method: 'GET'
+  }).then(function(response) {
+    console.log(response)
+    let result = response.results;
+    //variables for finding approx longitude and latitude
+    //for loop to go through array
+    
+      let pLongitude = result[i].location.lng;
+      let pLatitude = result[i].location.lat;
+    
+    console.log(pLongitude);
+  })
+}
+>>>>>>> 8baf8b0b7e96d744af34ac4e158d6e66d4203b83
