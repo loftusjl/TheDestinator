@@ -1,6 +1,5 @@
 var map, places, infoWindow;
 var markers = [];
-var hotelsArray = [];
 var autocomplete;
 var countryRestrict = {'country': 'us'};
 var MARKER_PATH = 'https://developers.google.com/maps/documentation/javascript/images/marker_green';
@@ -177,37 +176,7 @@ function dropMarker(i) {
   };
 }
 
-function addResult(result, i) {
 
-  // call yelpBusinessIDSearch() to get business ID
-  
-  hotelsArray.push(result.name);
-  console.log('hotelsArray', hotelsArray)
-  yelpBusinessIDSearch(searchCity, result.name)
-
-  // var results = document.getElementById('hotelAccordion');
-  // var markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
-  // var markerIcon = MARKER_PATH + markerLetter + '.png';
-
-  // var tr = document.createElement('tr');
-  // tr.style.backgroundColor = (i % 2 === 0 ? '#F0F0F0' : '#FFFFFF');
-  // tr.onclick = function() {
-  //   google.maps.event.trigger(markers[i], 'click');
-  // };
-
-  // var iconTd = document.createElement('td');
-  // var nameTd = document.createElement('td');
-  // var icon = document.createElement('img');
-  // icon.src = markerIcon;
-  // icon.setAttribute('class', 'placeIcon');
-  // icon.setAttribute('className', 'placeIcon');
-  // var name = document.createTextNode(result.name);
-  // iconTd.appendChild(icon);
-  // nameTd.appendChild(name);
-  // tr.appendChild(iconTd);
-  // tr.appendChild(nameTd);
-  // results.appendChild(tr);
-}
 
 function clearResults() {
   var results = document.getElementById('hotelAccordion');
