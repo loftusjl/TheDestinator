@@ -1,4 +1,4 @@
-
+// let searchCity = $('#autocomplete').val();
 
 // start progress bar
 function loadingOn() {

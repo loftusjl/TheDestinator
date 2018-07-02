@@ -1,10 +1,13 @@
+
 function weatherForcast() {
 
 let weatherSearch = $('#autocomplete').val();
 
 
-var APIKey = "87231f56cfbb4322a1a44bc975de93ac";
-var queryURL = `https://api.openweathermap.org/data/2.5/forecast?q=${weatherSearch}&units=imperial&appid=` + APIKey;
+
+  var APIKey = "87231f56cfbb4322a1a44bc975de93ac";
+  var queryURL = `https://api.openweathermap.org/data/2.5/forecast?q=${searchCity}&units=imperial&appid=` + APIKey;
+
 
 
 $.ajax({
@@ -49,5 +52,6 @@ $.ajax({
  // }
   
 }
+
 
 

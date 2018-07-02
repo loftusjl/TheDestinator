@@ -97,7 +97,7 @@ function initMap() {
 // zoom the map in on the city.
 function onPlaceChanged() {
   var place = autocomplete.getPlace();
-  $('#accordion').empty();
+  $('#RestaurantsAccordion').empty();
   if (place.geometry) {
     map.panTo(place.geometry.location);
     map.setZoom(15);
@@ -105,8 +105,10 @@ function onPlaceChanged() {
   } else {
     document.getElementById('autocomplete').placeholder = 'Enter a city';
   }
-  weatherForcast();
-  yelpDisplay();
+  let searchCity = $('#autocomplete').val();
+  console.log(`Search City: ${searchCity}`)
+  weatherForcast(searchCity);
+  yelpDisplay(searchCity);
 }
 
 // Search for hotels in the selected city, within the viewport of the map.
