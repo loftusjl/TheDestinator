@@ -45,23 +45,23 @@ function yelpDisplay() {
 }
 //yelp results based on activities
 //finish later
-function yelpPOI(){
-  let yelpSearch = $('#autocomplete').val();
-  console.log(yelpSearch)
+// function yelpPOI(){
+//   let yelpSearch = $('#autocomplete').val();
+//   console.log(yelpSearch)
 
-  const url = `https://api.yelp.com/v3/businesses/search?location=${yelpSearch}`
-  $.ajaxPrefilter(function (options) {
-    if (options.crossDomain && $.support.cors) {
-      options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
-    }
-  });
+//   const url = `https://api.yelp.com/v3/businesses/search?location=${yelpSearch}`
+//   $.ajaxPrefilter(function (options) {
+//     if (options.crossDomain && $.support.cors) {
+//       options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
+//     }
+//   });
 
-  // Yelp Search Business and push to DOM
-  $.ajax(url, { headers: { Authorization: "Bearer qlzoMPClc_UIn2xgz5qrVbK6oOcTue-cMV4Yq2Jj0lLXQd-SZAdfeGzXu_fh_62vECy4zEi_T0ixNUpJ_aooGcYfzKiij_1Ydl3fW6j0i2r8Xf-B6NX1GPmMP8AxW3Yx" } })
-    .then(function (response) {
-      console.log(response)
-      let business = response.businesses;
+//   // Yelp Search Business and push to DOM
+//   $.ajax(url, { headers: { Authorization: "Bearer qlzoMPClc_UIn2xgz5qrVbK6oOcTue-cMV4Yq2Jj0lLXQd-SZAdfeGzXu_fh_62vECy4zEi_T0ixNUpJ_aooGcYfzKiij_1Ydl3fW6j0i2r8Xf-B6NX1GPmMP8AxW3Yx" } })
+//     .then(function (response) {
+//       console.log(response)
+//       let business = response.businesses;
 
-    });
+//     });
 
-}
+// }
