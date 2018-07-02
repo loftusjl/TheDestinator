@@ -12,7 +12,7 @@ $( document ).ready(function() {
         method: "GET"
       })
       .then(function(response) {
-           console.log(response);
+        console.log(response);
       });
 })
 
@@ -27,15 +27,15 @@ $('form').submit(function(event) {
         method: "GET"
     }).then(function(response) {
         loadingOff().hide()
-        console.log(response.results);
+        //console.log(response.results);
         //creating a varible to store response results prefix
         let results = response.results;
         photoReference = '&photoreference=' + response.results[0].photos[0].photo_reference;
-        console.log(`Photo URL for AJAX: ${photoURL + photoMaxWidth + photoReference + keyAPI}`);
+        //console.log(`Photo URL for AJAX: ${photoURL + photoMaxWidth + photoReference + keyAPI}`);
         if (response.results[0].photos.length > 0) {
             $('#photoDIV').append(`<img src="${photoURL + photoMaxWidth + photoReference + keyAPI}">`)
         } else {
-            console.log(`No photos to show`)
+            //console.log(`No photos to show`)
         }
 
     })
