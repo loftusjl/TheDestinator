@@ -20,8 +20,14 @@ $.ajax({
         let temp = dailyForecast[i].main.temp
         let wind = dailyForecast[i].wind.speed
         let humidity = dailyForecast[i].main.humidity
+        let day = dailyForecast[i].dt_txt
         console.log(temp, wind, humidity)
-       $("#weather > tbody").append("<tr><td>" + temp + "</td><td>" + humidity + "</td><td>" + wind + "</td></tr>");
+     
+        $(".day1").text("Forecast: " + day + " " + temp + " " + humidity + " " + wind);
+        $(".day2").text("Forecast: " + day + " " + temp + " " + humidity + " " + wind);
+        $(".day3").text("Forecast: " + day + " " + temp + " " + humidity + " " + wind);
+        $(".day4").text("Forecast: " + day + " " + temp + " " + humidity + " " + wind);
+        $(".day5").text("Forecast: " + day + " " + temp + " " + humidity + " " + wind);
     }
   })
 
