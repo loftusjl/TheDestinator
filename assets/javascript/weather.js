@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 function weatherForcast(searchCity) {
+=======
+
+function weatherForcast() {
+>>>>>>> 6c57d8bbd4b58e4f6c5f7f48c8ba9fe608594d30
 
 
 
@@ -7,6 +12,7 @@ function weatherForcast(searchCity) {
   var queryURL = `https://api.openweathermap.org/data/2.5/forecast?q=${searchCity}&units=imperial&appid=` + APIKey;
 
 
+<<<<<<< HEAD
   $.ajax({
       url: queryURL,
       method: "GET"
@@ -17,6 +23,19 @@ function weatherForcast(searchCity) {
       console.log(city)
       console.log('here is the array ', dailyForecast)
       for (i = 0; i < dailyForecast.length; i++) {
+=======
+
+$.ajax({
+    url: queryURL,
+    method: "GET"
+  })
+  .then(function(weatherForecast) {
+    let city = weatherForecast.city.name;
+    let dailyForecast = weatherForecast.list;
+    console.log(city)
+    console.log('here is the array ', dailyForecast)
+    for (i = 0; i < dailyForecast.length; i++) {
+>>>>>>> 6c57d8bbd4b58e4f6c5f7f48c8ba9fe608594d30
         let temp = dailyForecast[i].main.temp
         let wind = dailyForecast[i].wind.speed
         let humidity = dailyForecast[i].main.humidity
@@ -48,4 +67,8 @@ function weatherForcast(searchCity) {
 
   // }
 
+<<<<<<< HEAD
 }
+=======
+
+>>>>>>> 6c57d8bbd4b58e4f6c5f7f48c8ba9fe608594d30
