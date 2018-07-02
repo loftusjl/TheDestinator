@@ -4,8 +4,12 @@ body {
     padding: 0;
     height: 100%;
     width: 100%;
-    overflow: hidden;
-    position: relative;
+    /* overflow: hidden; */
+    /* position: relative; */
+}
+
+.page-wrapper {
+    height: 100%;
 }
 
 .row {
@@ -62,7 +66,8 @@ body {
 
 /* Main content */
 .main-content {
-    height: calc(100vh - 400px);
+    /* height: calc(100vh - 400px); */
+    height: 700px;
 }
 
 /* Search Bar Section */
@@ -113,11 +118,16 @@ body {
     height: 100%;
 }
 
+#accordion,
+.hotel-display {
+    border: 1px solid slategray;
+}
+
 /* ------ */
 
 .tab-content {
     position: relative;
-    max-height: 400px;
+    max-height: 500px;
     overflow-y: scroll;
 }
 #accordion {
@@ -126,11 +136,15 @@ body {
     font-family: 'Poppins';
 }
 
+.tab-pane {
+    width: 100%;
+}
 
 .image-panel {
     /* Temporary background holder */
     background-color: white;
-    height: calc(100vh - 530px);
+    /* height: calc(100vh - 530px); */
+    max-height: 500px;
     position: relative;
 }
 
@@ -165,6 +179,12 @@ body {
 #map {
   min-height: 300px;
   width: 100%;
+  /* flex: 1; */
+}
+
+#contact {
+    /* flex: 1; */
+    position: relative;
 }
 
 .map {
@@ -176,15 +196,21 @@ body {
 .map-display {
     background-color: lightgrey;
     border: 1px solid gray;
+    flex-direction: column;
+    display: flex;
 }
+
+/* .flex-container {
+    
+} */
 
 /* Footer Section */
 .footer {
     height: 150px;
-    background-color: rgb(103, 103, 248);
+    background-color: rgb(8, 112, 153);
     bottom: 0px;
     width: 100%;
-    position: absolute;
+    /* position: absolute; */
 }
 
 #copyright {
@@ -208,7 +234,7 @@ body {
 
 }
 
-@media screen and (min-height: 700px) {
+/* @media screen and (min-height: 700px) {
     .tab-content {
         height: 200px;
     }
@@ -224,6 +250,4 @@ body {
     .tab-content {
         height: 350px;
     }
-}
-
-
+} */
