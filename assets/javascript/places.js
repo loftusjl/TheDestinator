@@ -106,7 +106,7 @@ function onPlaceChanged() {
     document.getElementById('autocomplete').placeholder = 'Enter a city';
   }
   searchCity = $('#autocomplete').val();
-  console.log(`Search City: ${searchCity}`)
+  //console.log(`Search City: ${searchCity}`)
   weatherForcast(searchCity);
   yelpDisplay(searchCity);
 }
