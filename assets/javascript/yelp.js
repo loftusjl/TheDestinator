@@ -8,7 +8,7 @@ function yelpDisplay(searchCity) {
 
   // const url = `https://api.yelp.com/v3/businesses/search?location=${searchCity}&categories=Food&sort_by=rating`
   const url = `${yelpURL}${yelpBusinessSearch}${searchCity}&categories=Food&sort_by=rating`
-  console.log(`yelpurl: ${url}`)
+  //console.log(`yelpurl: ${url}`)
 
   $.ajaxPrefilter(function (options) {
     if (options.crossDomain && $.support.cors) {
@@ -19,7 +19,7 @@ function yelpDisplay(searchCity) {
   // Yelp Search Business and push to DOM
   $.ajax(url, yelpHeaders )
     .then(function (response) {
-      console.log('Restaurant', response)
+      //console.log('Restaurant', response)
       let business = response.businesses;
       //appends restaurants to accordion body
       for (i = 0; i < business.length; i++) {
@@ -66,20 +66,20 @@ function yelpBusinessIDSearch(searchCity, busName) {
   $.ajax(settings).done(function (response) {
     let results = response.businesses[0];
     if (typeof results != 'undefined') {
-      console.log('hotelsArray', hotelsArray)
-      console.log('IDSearchResults', results)
+      //console.log('hotelsArray', hotelsArray)
+      //console.log('IDSearchResults', results)
       let busID = results.id;
-      console.log('BusinessID',busID);
+      //console.log('BusinessID',busID);
       let busName = results.name;
-      console.log('BusinessName',busName);
+      //console.log('BusinessName',busName);
       let busImageURL = results.image_url;
-      console.log('BusinessImage',busImageURL);
+      //console.log('BusinessImage',busImageURL);
       let busAddress = results.location.display_address;
-      console.log('BusinessAddress',busAddress);
+      //console.log('BusinessAddress',busAddress);
       let busURL = results.url;
-      console.log('BusinessURL',busURL);
+      //console.log('BusinessURL',busURL);
       let busPhone = results.display_phone;
-      console.log('BusinessPhone',busPhone);
+      //console.log('BusinessPhone',busPhone);
       let busRating = results.rating;
       let busPrice = results.price;
       if (typeof busPrice == 'undefined') { busPrice = 'Not Listed'}
