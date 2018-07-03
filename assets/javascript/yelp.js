@@ -51,6 +51,7 @@ function yelpDisplay(searchCity) {
 }
 
 function yelpBusinessIDSearch(searchCity, busName) {
+  $('#hotelAccordion').empty();
   var settings = {
     // "async": true,
     // "crossDomain": true,
@@ -59,12 +60,14 @@ function yelpBusinessIDSearch(searchCity, busName) {
     "headers": {
       "Authorization": "Bearer qlzoMPClc_UIn2xgz5qrVbK6oOcTue-cMV4Yq2Jj0lLXQd-SZAdfeGzXu_fh_62vECy4zEi_T0ixNUpJ_aooGcYfzKiij_1Ydl3fW6j0i2r8Xf-B6NX1GPmMP8AxW3Yx",
       "Cache-Control": "no-cache",
-      // "Postman-Token": "dfb5acc5-388c-46f8-bd71-6dfb3e7a1d0d"
+      'Access-Control-Allow-Origin': '*',
+      "Postman-Token": "dfb5acc5-388c-46f8-bd71-6dfb3e7a1d0d"
     }
   }
   
   $.ajax(settings).done(function (response) {
     let results = response.businesses[0];
+   
     if (typeof results != 'undefined') {
       //console.log('hotelsArray', hotelsArray)
       //console.log('IDSearchResults', results)
@@ -82,6 +85,7 @@ function yelpBusinessIDSearch(searchCity, busName) {
       //console.log('BusinessPhone',busPhone);
       let busRating = results.rating;
       let busPrice = results.price;
+     
       if (typeof busPrice == 'undefined') { busPrice = 'Not Listed'}
       $('#hotelAccordion').append(`<div class="card">
                     <div class="card-header" id="heading${busID}">
@@ -117,28 +121,28 @@ function addResult(result) {
   
   yelpBusinessIDSearch(searchCity, result.name)
 
-  var results = document.getElementById('hotelAccordion');
-  var markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
-  var markerIcon = MARKER_PATH + markerLetter + '.png';
+  // var results = document.getElementById('hotelAccordion');
+  // var markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
+  // var markerIcon = MARKER_PATH + markerLetter + '.png';
 
-  var tr = document.createElement('tr');
-  tr.style.backgroundColor = (i % 2 === 0 ? '#F0F0F0' : '#FFFFFF');
-  tr.onclick = function() {
-    google.maps.event.trigger(markers[i], 'click');
-  };
+  // var tr = document.createElement('tr');
+  // tr.style.backgroundColor = (i % 2 === 0 ? '#F0F0F0' : '#FFFFFF');
+  // tr.onclick = function() {
+  //   google.maps.event.trigger(markers[i], 'click');
+  // };
 
-  var iconTd = document.createElement('td');
-  var nameTd = document.createElement('td');
-  var icon = document.createElement('img');
-  icon.src = markerIcon;
-  icon.setAttribute('class', 'placeIcon');
-  icon.setAttribute('className', 'placeIcon');
-  var name = document.createTextNode(result.name);
-  iconTd.appendChild(icon);
-  nameTd.appendChild(name);
-  tr.appendChild(iconTd);
-  tr.appendChild(nameTd);
-  results.appendChild(tr);
+  // var iconTd = document.createElement('td');
+  // var nameTd = document.createElement('td');
+  // var icon = document.createElement('img');
+  // icon.src = markerIcon;
+  // icon.setAttribute('class', 'placeIcon');
+  // icon.setAttribute('className', 'placeIcon');
+  // var name = document.createTextNode(result.name);
+  // iconTd.appendChild(icon);
+  // nameTd.appendChild(name);
+  // tr.appendChild(iconTd);
+  // tr.appendChild(nameTd);
+  // results.appendChild(tr);
 }
 // var settings = {
 //   "async": true,

@@ -88,7 +88,9 @@ function initMap() {
 
   autocomplete.addListener('place_changed', onPlaceChanged);
 
-  // Add a DOM event listener to react when the user selects a country. **WIP, not in index.html currently
+  map.addListener('center_changed', onPlaceChanged);
+
+  // Add a DOM event listener to react when the user selects a country.
   document.getElementById('country').addEventListener(
       'change', setAutocompleteCountry);
 }
@@ -98,7 +100,7 @@ function initMap() {
 function onPlaceChanged() {
   var place = autocomplete.getPlace();
   $('#RestaurantsAccordion').empty();
-  $('#hotelAccordion').empty();
+  
   if (place.geometry) {
     map.panTo(place.geometry.location);
     map.setZoom(15);
@@ -109,11 +111,12 @@ function onPlaceChanged() {
   searchCity = $('#autocomplete').val();
   //console.log(`Search City: ${searchCity}`)
   weatherForcast(searchCity);
-  yelpDisplay(searchCity);
+  // yelpDisplay(searchCity);
 }
 
 // Search for hotels in the selected city, within the viewport of the map.
 function search() {
+
   var search = {
     bounds: map.getBounds(),
     types: ['lodging']
