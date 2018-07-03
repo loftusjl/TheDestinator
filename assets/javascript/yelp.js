@@ -92,7 +92,7 @@ function yelpBusinessIDSearch(searchCity, busName) {
                       </h5>
                     </div>
                 
-                    <div id="collapse${busID}" class="collapse" aria-labelledby="heading${busID}" data-parent="#accordion">
+                    <div id="collapse${busID}" class="collapse" aria-labelledby="heading${busID}" data-parent="#hotelAccordion">
                       <div class="card-body">
                       <img class= resImg src=${busImageURL} alt= restaurant-image>
                       <ul class="list-group">
@@ -117,28 +117,28 @@ function addResult(result) {
   
   yelpBusinessIDSearch(searchCity, result.name)
 
-  // var results = document.getElementById('hotelAccordion');
-  // var markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
-  // var markerIcon = MARKER_PATH + markerLetter + '.png';
+  var results = document.getElementById('hotelAccordion');
+  var markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
+  var markerIcon = MARKER_PATH + markerLetter + '.png';
 
-  // var tr = document.createElement('tr');
-  // tr.style.backgroundColor = (i % 2 === 0 ? '#F0F0F0' : '#FFFFFF');
-  // tr.onclick = function() {
-  //   google.maps.event.trigger(markers[i], 'click');
-  // };
+  var tr = document.createElement('tr');
+  tr.style.backgroundColor = (i % 2 === 0 ? '#F0F0F0' : '#FFFFFF');
+  tr.onclick = function() {
+    google.maps.event.trigger(markers[i], 'click');
+  };
 
-  // var iconTd = document.createElement('td');
-  // var nameTd = document.createElement('td');
-  // var icon = document.createElement('img');
-  // icon.src = markerIcon;
-  // icon.setAttribute('class', 'placeIcon');
-  // icon.setAttribute('className', 'placeIcon');
-  // var name = document.createTextNode(result.name);
-  // iconTd.appendChild(icon);
-  // nameTd.appendChild(name);
-  // tr.appendChild(iconTd);
-  // tr.appendChild(nameTd);
-  // results.appendChild(tr);
+  var iconTd = document.createElement('td');
+  var nameTd = document.createElement('td');
+  var icon = document.createElement('img');
+  icon.src = markerIcon;
+  icon.setAttribute('class', 'placeIcon');
+  icon.setAttribute('className', 'placeIcon');
+  var name = document.createTextNode(result.name);
+  iconTd.appendChild(icon);
+  nameTd.appendChild(name);
+  tr.appendChild(iconTd);
+  tr.appendChild(nameTd);
+  results.appendChild(tr);
 }
 // var settings = {
 //   "async": true,

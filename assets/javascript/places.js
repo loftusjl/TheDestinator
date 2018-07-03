@@ -98,6 +98,7 @@ function initMap() {
 function onPlaceChanged() {
   var place = autocomplete.getPlace();
   $('#RestaurantsAccordion').empty();
+  $('#hotelAccordion').empty();
   if (place.geometry) {
     map.panTo(place.geometry.location);
     map.setZoom(15);
@@ -176,8 +177,6 @@ function dropMarker(i) {
   };
 }
 
-
-
 function clearResults() {
   var results = document.getElementById('hotelAccordion');
   while (results.childNodes[0]) {
@@ -254,8 +253,7 @@ function buildIWContent(place) {
 var markers;
 var bounds;
 
-function plotMarkers(m)
-{
+function plotMarkers(m) {
   markers = [];
   bounds = new google.maps.LatLngBounds();
 
