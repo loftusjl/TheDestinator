@@ -1,8 +1,5 @@
 function weatherForcast(searchCity) {
 
-
-
-
   var APIKey = "87231f56cfbb4322a1a44bc975de93ac";
   var queryURL = `https://api.openweathermap.org/data/2.5/forecast?q=${searchCity}&units=imperial&appid=` + APIKey;
 
@@ -18,14 +15,14 @@ function weatherForcast(searchCity) {
       console.log('here is the array ', dailyForecast)
    
       for (i = 0; i < dailyForecast.length; i++) {
-        let hour = moment(dailyForecast[i].dt_txt).format('HH:mm')
+        let hour = moment(dailyForecast[i].dt_txt).format('MM-DD-YYYY HH:mm')
         let temp = dailyForecast[i].main.temp
         let wind = dailyForecast[i].wind.speed
         let humidity = dailyForecast[i].main.humidity
-        let icon = $('.icon').html('<img src=http://openweathermap.org/img/w/' + dailyForecast[i].weather[0].icon + '.png>')
+        let icon = $('.day1').html('<img src=http://openweathermap.org/img/w/' + dailyForecast[0].weather[0].icon + '.png>')
         let day = dailyForecast[i].dt_txt
-        console.log(temp, wind, humidity)
-        console.log(hour)
+        //console.log(temp, wind, humidity)
+        //console.log(hour)
         $(".day1").text("Forecast: " + day  + " " + icon + " " + temp + " " + humidity + " " + wind);
         $(".day2").text("Forecast: " + day + " " + temp + " " + humidity + " " + wind);
         $(".day3").text("Forecast: " + day + " " + temp + " " + humidity + " " + wind);
