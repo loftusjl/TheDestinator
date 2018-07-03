@@ -2,9 +2,21 @@ let dayArray = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun']
 function weatherForcast(searchCity) {
 
   var APIKey = "87231f56cfbb4322a1a44bc975de93ac";
+  //api call for 5 day forecast
   var queryURL = `https://api.openweathermap.org/data/2.5/forecast?q=${searchCity}&units=imperial&appid=` + APIKey;
+  //API call for current temp
+  let currentTemp = `https://api.openweathermap.org/data/2.5/weather?q=${searchCity}&units=imperial&appid=` + APIKey;
+  //for current temp
+  $.ajax({
+    url: currentTemp,
+    method: "GET"
+  })
+  .then(function(searchResponse){
+    $('#current-temp').text('Current Temp: ' + searchResponse.main.temp)
+    console.log(searchResponse.main.temp)
 
-
+  })
+  //for 5 day forecast
   $.ajax({
       url: queryURL,
       method: "GET"
@@ -42,11 +54,11 @@ function weatherForcast(searchCity) {
         }
          //temperatureArray.filter(dayFilter(i))
          //console.log('Temperature Array', temperatureArray.filter(dayFilter(i)))
-      //console.log(temperatureArray)
+      console.log(temperatureArray)
       for (d = 0; d < dayArray.length; d++) {
       //Math.max(temperatureArray.filter(tempMax))
       //Math.min(temperatureArray.filter(tempMin))
-      //console.log(Math.max(temperatureArray.filter(tempMax)))
+      console.log(Math.max(temperatureArray.filter(tempMax)))
     }
     })
 
