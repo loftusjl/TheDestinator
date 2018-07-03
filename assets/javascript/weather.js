@@ -25,34 +25,26 @@ function weatherForcast(searchCity) {
     .then(function (weatherForecast) {
       let dailyForecast = weatherForecast.list;
       let temperatureArray = []
-  
+
       for (i = 0; i < dailyForecast.length; i+=8) {
         let day = moment(dailyForecast[i].dt_txt).format('ddd')
         let hour = moment(dailyForecast[i].dt_txt).format('HH')
         temperatureArray.push({
-          dt: dailyForecast[i].dt,
-          dt: dailyForecast[i].dt_txt,
-          day: day,
+          days: day,
           tempMax: dailyForecast[i].main.temp_max,
           tempMin: dailyForecast[i].main.temp_min,
-          icon: dailyForecast[i].weather[0].icon
+          icon: '<img src=http://openweathermap.org/img/w/' + dailyForecast[i].weather[0].icon + '.png>'
         })
-        let temp = dailyForecast[i].main.temp
-        let wind = dailyForecast[i].wind.speed
-        let humidity = dailyForecast[i].main.humidity
-        let icon = '<img src=http://openweathermap.org/img/w/' + dailyForecast[i].weather[0].icon + '.png>'
-
-        //console.log(temp, wind, humidity)
-        //console.log(hour)
-        $(".day1").html(day + " " + icon + " " + temp + " " + humidity + " " + wind);
-        $(".day2").html(day + " " + icon + " " + temp + " " + humidity + " " + wind);
-        $(".day3").html(day + " " + icon + " " + temp + " " + humidity + " " + wind);
-        $(".day4").html(day + " " + icon + " " + temp + " " + humidity + " " + wind);
-        $(".day5").html(day + " " + icon + " " + temp + " " + humidity + " " + wind);
+        
       }
+      $(".day1").html(temperatureArray[0].days + " " + temperatureArray[0].icon + " " + temperatureArray[0].tempMin + " " + temperatureArray[0].tempMax);
+      $(".day2").html(temperatureArray[1].days + " " + temperatureArray[1].icon + " " + temperatureArray[1].tempMin + " " + temperatureArray[1].tempMax);
+      $(".day3").html(temperatureArray[2].days + " " + temperatureArray[2].icon + " " + temperatureArray[2].tempMin + " " + temperatureArray[2].tempMax);
+      $(".day4").html(temperatureArray[3].days + " " + temperatureArray[3].icon + " " + temperatureArray[3].tempMin + " " + temperatureArray[3].tempMax);
+      $(".day5").html(temperatureArray[4].days + " " + temperatureArray[4].icon + " " + temperatureArray[4].tempMin + " " + temperatureArray[4].tempMax);
+      console.log(temperatureArray)
       //temperatureArray.filter(dayFilter(i))
       //console.log('Temperature Array', temperatureArray.filter(dayFilter(i)))
-      console.log(temperatureArray)
 
         //Math.max(temperatureArray.filter(tempMax))
         //Math.min(temperatureArray.filter(tempMin))
