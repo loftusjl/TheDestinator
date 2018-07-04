@@ -37,11 +37,11 @@ function weatherForcast(searchCity) {
         })
         
       }
-      $(".day1").html(temperatureArray[0].days + " " + temperatureArray[0].icon + " " + temperatureArray[0].tempMin + " " + temperatureArray[0].tempMax);
-      $(".day2").html(temperatureArray[1].days + " " + temperatureArray[1].icon + " " + temperatureArray[1].tempMin + " " + temperatureArray[1].tempMax);
-      $(".day3").html(temperatureArray[2].days + " " + temperatureArray[2].icon + " " + temperatureArray[2].tempMin + " " + temperatureArray[2].tempMax);
-      $(".day4").html(temperatureArray[3].days + " " + temperatureArray[3].icon + " " + temperatureArray[3].tempMin + " " + temperatureArray[3].tempMax);
-      $(".day5").html(temperatureArray[4].days + " " + temperatureArray[4].icon + " " + temperatureArray[4].tempMin + " " + temperatureArray[4].tempMax);
+      $(".day1").html(temperatureArray[0].days + " " + temperatureArray[0].icon + " " + "Low: " + temperatureArray[0].tempMin + " " + "High: " + temperatureArray[0].tempMax);
+      $(".day2").html(temperatureArray[1].days + " " + temperatureArray[1].icon + " " + "Low: " + temperatureArray[1].tempMin + " " + "High: " + temperatureArray[1].tempMax);
+      $(".day3").html(temperatureArray[2].days + " " + temperatureArray[2].icon + " " + "Low: " + temperatureArray[2].tempMin + " " + "High: " + temperatureArray[2].tempMax);
+      $(".day4").html(temperatureArray[3].days + " " + temperatureArray[3].icon + " " + "Low: " + temperatureArray[3].tempMin + " " + "High: " + temperatureArray[3].tempMax);
+      $(".day5").html(temperatureArray[4].days + " " + temperatureArray[4].icon + " " + "Low: " + temperatureArray[4].tempMin + " " + "High: " + temperatureArray[4].tempMax);
       console.log(temperatureArray)
       //temperatureArray.filter(dayFilter(i))
       //console.log('Temperature Array', temperatureArray.filter(dayFilter(i)))
