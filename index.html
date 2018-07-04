@@ -34,37 +34,37 @@
       <!-- Location search and display panel -->
       <div class="row search-panel">
         <!-- Left Column -->
-        <div class="col-sm-2 summary">
-          <h5 id="summary">TRAVEL SUMMARY</h5>
+        <div class="col-sm-1">
+
         </div>
 
         <!-- Center Column -->
-        <div class="col-sm-8 display-location">
+        <div class="col-sm-8 display-location weather-display">
           <!-- Weather Forecast -->
 
           <div class="card card-primary" style="width:100%;">
             <div class="card-heading">
               <div class='row'>
                 <div class="card-title">
-                  <h3 class='col'>5 Day Forecast</h3>
-                  <h3 id='current-temp' class='col'></h3>
+                  <h4 class='col'>5 Day Forecast</h4>
+                  <h4 id='current-temp' class='col'></h4>
                 </div>
               </div>
             </div>
-            <div class='row'>
-              <div class="card-body col-2">
+            <div class='row weather'>
+              <div class="card-body days">
                 <div class='day1'></div>
               </div>
-              <div class="card-body col-2">
+              <div class="card-body days">
                 <div class='day2'></div>
               </div>
-              <div class="card-body col-2">
+              <div class="card-body days">
                 <div class='day3'></div>
               </div>
-              <div class="card-body col-2">
+              <div class="card-body days">
                 <div class='day4'></div>
               </div>
-              <div class="card-body col-2">
+              <div class="card-body days">
                 <div class='day5'></div>
               </div>
             </div>
@@ -104,9 +104,8 @@
 
       <!-- Location image display -->
       <div class="row image-panel">
-
         <!-- Left Column -->
-        <div class="col-sm-2 temp-display">
+        <div class="col-sm-1 temp-display">
           <!-- temporary holding div -->
         </div>
         <!-- Center Column -->
@@ -209,53 +208,55 @@
             <div id="map">
 
             </div>
-            <!-- <div id="contact">
-                <form>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
-                </div> -->
+          </div>
+          <div id="contact">
+            <form>
+                <h5>Contact Us</h5>
+                <input type="text" class="form-control" id="enterName" placeholder="Enter Name">
+                <input type="email" class="form-control" id="enterEmail" aria-describedby="emailHelp" placeholder="Enter email">
+                <textarea class="form-control" id="enterComment" placeholder="Comment"></textarea>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Footer -->
-    <div class="footer">
-      <p id="copyright">Puff Puff Parse &copy;</p>
-      <div class="devs">
-        <a href="#">
-          <p>Adam F.</p>
-        </a>
-        <a href="#">
-          <p>Calvin W.</p>
-        </a>
-        <a href="#">
-          <p>Jesse L.</p>
-        </a>
-        <a href="#">
-          <p>Kerry T.</p>
-        </a>
+
+      <!-- Footer -->
+      <div class="footer">
+        <p id="copyright">Puff Puff Parse &copy;</p>
+        <div class="devs">
+          <a href="#">
+            <p>Adam F.</p>
+          </a>
+          <a href="#">
+            <p>Calvin W.</p>
+          </a>
+          <a href="#">
+            <p>Jesse L.</p>
+          </a>
+          <a href="#">
+            <p>Kerry T.</p>
+          </a>
+        </div>
       </div>
     </div>
-  </div>
 
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
-    crossorigin="anonymous"></script>
-  <script src="assets/javascript/moment.js"></script>
-  <!-- <script src="assets/javascript/gPlaces.js"></script> -->
-  <script src="./assets/javascript/yelp.js"></script>
-  <script src="./assets/javascript/weather.js"></script>
-  <script src="./assets/javascript/places.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtAoE-_wQqtKgBC2vDZ_l4Y0qnpzBaMfw&libraries=places&callback=initMap"
-    async defer></script>
-  <script src="assets/javascript/app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+      crossorigin="anonymous"></script>
+    <script src="assets/javascript/moment.js"></script>
+    <!-- <script src="assets/javascript/gPlaces.js"></script> -->
+    <script src="./assets/javascript/yelp.js"></script>
+    <script src="./assets/javascript/weather.js"></script>
+    <script src="./assets/javascript/places.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtAoE-_wQqtKgBC2vDZ_l4Y0qnpzBaMfw&libraries=places&callback=initMap"
+      async defer></script>
+    <script src="assets/javascript/app.js"></script>
 
 </body>
 
