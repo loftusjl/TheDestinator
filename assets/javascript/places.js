@@ -87,8 +87,20 @@ function initMap() {
   places = new google.maps.places.PlacesService(map);
 
   autocomplete.addListener('place_changed', onPlaceChanged);
+  
+  // On mouseUp. Runs the lodging search on google map and sends updated latitude/longitude coordinates to
+  // the yelp hotel and food searches. This allows the site to pull anytime a user clicks the 
+  // map and drags to a new location.
+  map.addListener('mouseup', function() {
+    // setTimeout(search(), 3000)
+    search();
+    mylat = map.getCenter().lat(); 
+    mylng = map.getCenter().lng();
+    yelpBusinessIDSearch(mylat, mylng);
+    yelpDisplay(mylat, mylng);
+  });
 
-  // Add a DOM event listener to react when the user selects a country. **WIP, not in index.html currently
+  // Add a DOM event listener to react when the user selects a country.
   document.getElementById('country').addEventListener(
       'change', setAutocompleteCountry);
 }
@@ -98,6 +110,7 @@ function initMap() {
 function onPlaceChanged() {
   var place = autocomplete.getPlace();
   $('#RestaurantsAccordion').empty();
+  
   if (place.geometry) {
     map.panTo(place.geometry.location);
     map.setZoom(15);
@@ -105,14 +118,12 @@ function onPlaceChanged() {
   } else {
     document.getElementById('autocomplete').placeholder = 'Enter a city';
   }
-  searchCity = $('#autocomplete').val();
-  //console.log(`Search City: ${searchCity}`)
-  weatherForcast(searchCity);
-  yelpDisplay(searchCity);
+  
 }
 
 // Search for hotels in the selected city, within the viewport of the map.
 function search() {
+  
   var search = {
     bounds: map.getBounds(),
     types: ['lodging']
@@ -142,6 +153,11 @@ function search() {
       }
     }
   });
+  var mylat = map.getCenter().lat(); 
+  var mylng = map.getCenter().lng();
+  searchCity = $('#autocomplete').val();
+  weatherForcast(searchCity);
+  yelpDisplay(mylat, mylng);
 }
 
 function clearMarkers() {
@@ -175,8 +191,6 @@ function dropMarker(i) {
     markers[i].setMap(map);
   };
 }
-
-
 
 function clearResults() {
   var results = document.getElementById('hotelAccordion');
@@ -254,8 +268,7 @@ function buildIWContent(place) {
 var markers;
 var bounds;
 
-function plotMarkers(m)
-{
+function plotMarkers(m) {
   markers = [];
   bounds = new google.maps.LatLngBounds();
 
