@@ -111,5 +111,55 @@ function addResult(result) {
 
 }
 
-
-// Add function to append point of interests options accordion here
+function yelpPOI(mylat, mylng, poi) {
+  $('#poiAccordion').empty();
+  var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": `https://api.yelp.com/v3/businesses/search?categories=${poi}&latitude=${mylat}&longitude=${mylng}&sort_by=rating&radius=16095`,
+    "method": "GET",
+    "headers": {
+      "Authorization": "Bearer qlzoMPClc_UIn2xgz5qrVbK6oOcTue-cMV4Yq2Jj0lLXQd-SZAdfeGzXu_fh_62vECy4zEi_T0ixNUpJ_aooGcYfzKiij_1Ydl3fW6j0i2r8Xf-B6NX1GPmMP8AxW3Yx",
+      "Cache-Control": "no-cache",
+      "Postman-Token": "40f165dc-8d31-44dd-88de-19a45b756aff"
+    }
+  }
+  
+  $.ajax(settings).done(function (response) {
+    let results = response.businesses[0];
+    if (typeof results != 'undefined') {
+      let busID = results.id;
+      let busName = results.name;
+      let busImageURL = results.image_url;
+      let busAddress = results.location.display_address;
+      let busURL = results.url;
+      let busPhone = results.display_phone;
+      let busRating = results.rating;
+      let busPrice = results.price;
+     
+      if (typeof busPrice == 'undefined') { busPrice = 'Not Listed'}
+      $('#poiAccordion').append(`<div class="card">
+                    <div class="card-header" id="heading${busID}">
+                      <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse${busID}" aria-expanded="true" aria-controls="collapse${busID}">
+                          ${busName} &nbsp;|&nbsp; Rating: ${busRating} &nbsp;|&nbsp;  Price: ${busPrice}
+                        </button>
+                      </h5>
+                    </div>
+                
+                    <div id="collapse${busID}" class="collapse" aria-labelledby="heading${busID}" data-parent="#hotelAccordion">
+                      <div class="card-body">
+                      <img class= resImg src=${busImageURL} alt= restaurant-image>
+                      <ul class="list-group">
+                        <li class="list-group-item">Address: ${busAddress}</li>
+                        <li class="list-group-item">Website: <a href=${busURL}>${busURL}</a></li>
+                        <li class="list-group-item">Phone: ${busPhone}</li>
+                        
+                      </ul>
+                      </div>
+                    </div>
+                  </div>`)
+    }
+    
+  });
+}

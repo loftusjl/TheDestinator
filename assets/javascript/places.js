@@ -87,13 +87,15 @@ function initMap() {
   places = new google.maps.places.PlacesService(map);
 
   autocomplete.addListener('place_changed', onPlaceChanged);
-
+  
+  // On mouseUp. Runs the lodging search on google map and sends updated latitude/longitude coordinates to
+  // the yelp hotel and food searches. This allows the site to pull anytime a user clicks the 
+  // map and drags to a new location.
   map.addListener('mouseup', function() {
     // setTimeout(search(), 3000)
     search();
     mylat = map.getCenter().lat(); 
     mylng = map.getCenter().lng();
-    console.log(`Lat: ${mylat}, Lon: ${mylng}`);
     yelpBusinessIDSearch(mylat, mylng);
     yelpDisplay(mylat, mylng);
   });

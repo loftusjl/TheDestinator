@@ -26,7 +26,7 @@
         <h1 class="display-4">
           <span id="the">THE</span>
           <br>DESTINATOR</h1>
-          <h2>...You'll be back.</h2>
+        <h2>...You'll be back.</h2>
       </div>
     </div>
     <!-- Main Content Section -->
@@ -45,31 +45,31 @@
           <div class="card card-primary" style="width:100%;">
             <div class="card-heading">
               <div class='row'>
-              <div class="card-title">
-                <h3 class='col'>5 Day Forecast</h3>
-                <h3 id='current-temp' class='col'></h3>
+                <div class="card-title">
+                  <h3 class='col'>5 Day Forecast</h3>
+                  <h3 id='current-temp' class='col'></h3>
+                </div>
               </div>
             </div>
-            </div>
             <div class='row'>
-            <div class="card-body col-2">
-              <div class='day1'></div>
-            </div>
-            <div class="card-body col-2">
-              <div class='day2'></div>
-            </div>
-            <div class="card-body col-2">
-              <div class='day3'></div>
-            </div>
-            <div class="card-body col-2">
-              <div class='day4'></div>
-            </div>
-            <div class="card-body col-2">
-              <div class='day5'></div>
+              <div class="card-body col-2">
+                <div class='day1'></div>
+              </div>
+              <div class="card-body col-2">
+                <div class='day2'></div>
+              </div>
+              <div class="card-body col-2">
+                <div class='day3'></div>
+              </div>
+              <div class="card-body col-2">
+                <div class='day4'></div>
+              </div>
+              <div class="card-body col-2">
+                <div class='day5'></div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
         <!-- Right Column -->
         <div class="col-sm-2">
           <form action="submit">
@@ -121,72 +121,82 @@
                 <a href="#2a" class="btn btn-primary" data-toggle="tab">Restaurants</a>
               </li>
               <li class="mx-auto">
-                <!-- <a href="#3a" class="btn btn-primary" data-toggle="tab">Points of Interest</a> -->
+                <a href="#3a" class="btn btn-primary" data-toggle="tab">Points of Interest</a>
                 <!-- drop down items for point of interest selection -->
-                <div class="dropdown">
-                  <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Points Of Interest
-                  </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#3a" value='active'>Active</a>
-                    <a class="dropdown-item" href="#3a" value= 'nightlife'>Night Life</a>
-                    <a class="dropdown-item" href="#3a" value='arts'>Arts</a>
-                    <a class="dropdown-item" href="#3a" value='beautysvc'>Beauty and Spa</a>
-                    <a class="dropdown-item" href="#3a" value='shopping'>Shopping</a>
-                    
-                  </div>
-                </div>
-              </li>
-            </ul>
 
-            <div class="tab-content clearfix">
-              <div class="tab-pane active" id="1a">
-                <div class="row hotel-display">
-                  <div id="listing">
-                    <table id="resultsTable">
-                      <tbody id="hotelAccordion"></tbody>
+          </div>
+          </li>
+          </ul>
+
+          <div class="tab-content clearfix">
+            <div class="tab-pane active" id="1a">
+              <div class="row hotel-display">
+                <div id="listing">
+                  <table id="resultsTable">
+                    <tbody id="hotelAccordion"></tbody>
+                  </table>
+                </div>
+
+                <div style="display: none">
+                  <div id="info-content">
+                    <table>
+                      <tr id="iw-url-row" class="iw_table_row">
+                        <td id="iw-icon" class="iw_table_icon"></td>
+                        <td id="iw-url"></td>
+                      </tr>
+                      <tr id="iw-address-row" class="iw_table_row">
+                        <td class="iw_attribute_name">Address:</td>
+                        <td id="iw-address"></td>
+                      </tr>
+                      <tr id="iw-phone-row" class="iw_table_row">
+                        <td class="iw_attribute_name">Telephone:</td>
+                        <td id="iw-phone"></td>
+                      </tr>
+                      <tr id="iw-rating-row" class="iw_table_row">
+                        <td class="iw_attribute_name">Rating:</td>
+                        <td id="iw-rating"></td>
+                      </tr>
+                      <tr id="iw-website-row" class="iw_table_row">
+                        <td class="iw_attribute_name">Website:</td>
+                        <td id="iw-website"></td>
+                      </tr>
                     </table>
-                  </div>
 
-                  <div style="display: none">
-                    <div id="info-content">
-                      <table>
-                        <tr id="iw-url-row" class="iw_table_row">
-                          <td id="iw-icon" class="iw_table_icon"></td>
-                          <td id="iw-url"></td>
-                        </tr>
-                        <tr id="iw-address-row" class="iw_table_row">
-                          <td class="iw_attribute_name">Address:</td>
-                          <td id="iw-address"></td>
-                        </tr>
-                        <tr id="iw-phone-row" class="iw_table_row">
-                          <td class="iw_attribute_name">Telephone:</td>
-                          <td id="iw-phone"></td>
-                        </tr>
-                        <tr id="iw-rating-row" class="iw_table_row">
-                          <td class="iw_attribute_name">Rating:</td>
-                          <td id="iw-rating"></td>
-                        </tr>
-                        <tr id="iw-website-row" class="iw_table_row">
-                          <td class="iw_attribute_name">Website:</td>
-                          <td id="iw-website"></td>
-                        </tr>
-                      </table>
-
-                    </div>
                   </div>
                 </div>
               </div>
-              <div class="tab-pane" id="2a">
-                <div id="RestaurantsAccordion">
+            </div>
+            <div class="tab-pane" id="2a">
+              <div id="RestaurantsAccordion">
 
+              </div>
+            </div>
+            <div class="tab-pane" id="3a">
+              <div class="container">
+                <div class="row">
+                  <div class="col-3">
+                    <ul class="nav flex-column nav-pills">
+                      <li class="nav-item">
+                        <a class="nav-link active btn btn-primary poiLink" href="#" value='active'>Active</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link btn btn-primary poiLink" href="#" value='nightlife'>Night Life</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link btn btn-primary poiLink" href="#" value='arts'>Arts</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link btn btn-primary poiLink" href="#" value='beautysvc'>Beauty and Spa</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link btn btn-primary poiLink" href="#" value='shopping'>Shopping</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="col-9" id="poiAccordion">
+                    <!-- POINT OF INTEREST ACCORDION -->
+                  </div>
                 </div>
-              </div>
-              <div class="tab-pane" id="3a">
-                <h3>We applied clearfix to the tab-content to rid of the gap between the tab and the content</h3>
-              </div>
-              <div class="tab-pane" id="4a">
-                <h3>We use css to change the background color of the content to be equal to the tab</h3>
               </div>
             </div>
           </div>
