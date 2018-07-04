@@ -91,9 +91,11 @@ function initMap() {
   map.addListener('mouseup', function() {
     // setTimeout(search(), 3000)
     search();
-    var mylat = map.getCenter().lat(); 
-    var mylng = map.getCenter().lng();
+    mylat = map.getCenter().lat(); 
+    mylng = map.getCenter().lng();
     console.log(`Lat: ${mylat}, Lon: ${mylng}`);
+    yelpBusinessIDSearch(mylat, mylng);
+    yelpDisplay(mylat, mylng);
   });
 
   // Add a DOM event listener to react when the user selects a country.
@@ -149,9 +151,11 @@ function search() {
       }
     }
   });
+  var mylat = map.getCenter().lat(); 
+  var mylng = map.getCenter().lng();
   searchCity = $('#autocomplete').val();
   weatherForcast(searchCity);
-  yelpDisplay(searchCity);
+  yelpDisplay(mylat, mylng);
 }
 
 function clearMarkers() {

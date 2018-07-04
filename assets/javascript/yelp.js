@@ -1,12 +1,12 @@
-let yelpBusinessSearch = 'businesses/search?location=';
+let yelpBusinessSearch = 'businesses/search?';
 let yelpURL = 'https://api.yelp.com/v3/';
 let yelpHeaders = { headers: { Authorization: "Bearer qlzoMPClc_UIn2xgz5qrVbK6oOcTue-cMV4Yq2Jj0lLXQd-SZAdfeGzXu_fh_62vECy4zEi_T0ixNUpJ_aooGcYfzKiij_1Ydl3fW6j0i2r8Xf-B6NX1GPmMP8AxW3Yx", "Access-Control-Allow-Origin": "*","Access-Control-Allow-Methods":"GET,PUT,POST,DELETE", "Access-Control-Allow-Headers":"Origin, X-Requested-With, Content-Type, Accept" },  }
 
 
-function yelpDisplay(searchCity) {
+function yelpDisplay(mylat, mylng) {
 
   // const url = `https://api.yelp.com/v3/businesses/search?location=${searchCity}&categories=Food&sort_by=rating`
-  const url = `${yelpURL}${yelpBusinessSearch}${searchCity}&categories=Food&sort_by=rating`
+  const url = `${yelpURL}${yelpBusinessSearch}categories=Food&&latitude=${mylat}&longitude=${mylng}&sort_by=rating&limit=15`
   //console.log(`yelpurl: ${url}`)
 
   $.ajaxPrefilter(function (options) {
@@ -18,6 +18,7 @@ function yelpDisplay(searchCity) {
   // Yelp Search Business and push to DOM
   $.ajax(url, yelpHeaders )
     .then(function (response) {
+      $('#RestaurantsAccordion').empty();
       //console.log('Restaurant', response)
       let business = response.businesses;
       //appends restaurants to accordion body
@@ -50,17 +51,17 @@ function yelpDisplay(searchCity) {
 }
 
 // Match google places result with yelp lookup
-function yelpBusinessIDSearch(searchCity, busName) {
+function yelpBusinessIDSearch(mylat, mylng) {
   $('#hotelAccordion').empty();
   var settings = {
     "async": true,
     "crossDomain": true,
-    "url": `https://api.yelp.com/v3/businesses/search?location=${searchCity}&term=${busName}&categories=hotels&limit=1`,
+    "url": `https://api.yelp.com/v3/businesses/search?term=hotels&latitude=${mylat}&longitude=${mylng}&sort_by=rating&limit=15`,
     "method": "GET",
     "headers": {
       "Authorization": "Bearer qlzoMPClc_UIn2xgz5qrVbK6oOcTue-cMV4Yq2Jj0lLXQd-SZAdfeGzXu_fh_62vECy4zEi_T0ixNUpJ_aooGcYfzKiij_1Ydl3fW6j0i2r8Xf-B6NX1GPmMP8AxW3Yx",
       "Cache-Control": "no-cache",
-      "Postman-Token": "dfb5acc5-388c-46f8-bd71-6dfb3e7a1d0d"
+      "Postman-Token": "86622e64-5c93-40fa-bd2e-21aef202b050"
     }
   }
   
