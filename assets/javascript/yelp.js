@@ -1,6 +1,6 @@
 let yelpBusinessSearch = 'businesses/search?';
 let yelpURL = 'https://api.yelp.com/v3/';
-let yelpHeaders = { headers: { Authorization: "Bearer qlzoMPClc_UIn2xgz5qrVbK6oOcTue-cMV4Yq2Jj0lLXQd-SZAdfeGzXu_fh_62vECy4zEi_T0ixNUpJ_aooGcYfzKiij_1Ydl3fW6j0i2r8Xf-B6NX1GPmMP8AxW3Yx", "Access-Control-Allow-Origin": "*","Access-Control-Allow-Methods":"GET,PUT,POST,DELETE", "Access-Control-Allow-Headers":"Origin, X-Requested-With, Content-Type, Accept" },  }
+let yelpHeaders = { headers: { Authorization: "Bearer qlzoMPClc_UIn2xgz5qrVbK6oOcTue-cMV4Yq2Jj0lLXQd-SZAdfeGzXu_fh_62vECy4zEi_T0ixNUpJ_aooGcYfzKiij_1Ydl3fW6j0i2r8Xf-B6NX1GPmMP8AxW3Yx"},  }
 
 
 function yelpDisplay(mylat, mylng) {
@@ -51,12 +51,12 @@ function yelpDisplay(mylat, mylng) {
 }
 
 // Match google places result with yelp lookup
-function yelpBusinessIDSearch(mylat, mylng) {
+function yelpBusinessIDSearch(searchCity, name) {
   $('#hotelAccordion').empty();
   var settings = {
     "async": true,
     "crossDomain": true,
-    "url": `https://api.yelp.com/v3/businesses/search?term=hotels&latitude=${mylat}&longitude=${mylng}&sort_by=rating&limit=15`,
+    "url": `https://api.yelp.com/v3/businesses/search?location=${searchCity}&term=${name}&categories=hotels&limit=1`,
     "method": "GET",
     "headers": {
       "Authorization": "Bearer qlzoMPClc_UIn2xgz5qrVbK6oOcTue-cMV4Yq2Jj0lLXQd-SZAdfeGzXu_fh_62vECy4zEi_T0ixNUpJ_aooGcYfzKiij_1Ydl3fW6j0i2r8Xf-B6NX1GPmMP8AxW3Yx",
