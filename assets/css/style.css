@@ -2,14 +2,18 @@ html,
 body {
     margin: 0;
     padding: 0;
-    height: 100%;
+    /* height: 100%; */
     width: 100%;
-    /* overflow: hidden; */
-    /* position: relative; */
 }
 
+/* body {
+    margin-bottom: 150px;
+} */
+
 .page-wrapper {
-    height: 100%;
+    min-height: 100%;
+    position: relative;
+    margin-bottom: 150px;
 }
 
 .row {
@@ -57,7 +61,7 @@ body {
 .title {
     text-align: center;
     z-index: 1;
-    margin-top: 1%;
+    /* margin-top: 1%; */
 }
 
 #the {
@@ -66,27 +70,24 @@ body {
 
 /* Main content */
 .main-content {
-    /* height: calc(100vh - 400px); */
-    height: 700px;
+    margin-top: 20px;
 }
-
 /* Search Bar Section */
-#summary {
-    text-align: center;
+/* Search panel */
+.weather-display {
+    /* margin-bottom: 10px; */
 }
 
-/* Search panel */
+.weather {
+    display: flex;
+}
+
+.days {
+    flex: 1;
+}
+
 .search-panel {
     min-height: 130px;
-}
-
-.summary {
-    background-color: rgb(226, 75, 75);
-}
-
-#summary {
-    padding-top: 50px;
-    color: white;
 }
 
 #location {
@@ -118,21 +119,15 @@ body {
     height: 100%;
 }
 
-#accordion,
-.hotel-display {
-    border: 1px solid slategray;
-}
-
 /* ------ */
 
 .tab-content {
-    position: relative;
-    max-height: 500px;
     overflow-y: scroll;
 }
-#accordion {
-    position: relative;
-    height: 100%;
+
+#hotelAccordion,
+#RestaurantsAccordion {
+    max-height: 700px;
     font-family: 'Poppins';
 }
 
@@ -143,9 +138,6 @@ body {
 .image-panel {
     /* Temporary background holder */
     background-color: white;
-    /* height: calc(100vh - 530px); */
-    max-height: 500px;
-    position: relative;
 }
 
 
@@ -162,55 +154,38 @@ body {
     z-index: -1;
 }
 
-/* .flight-display {
-    background-color: lightblue;
-} */
-
 .bottom-right {
     padding: 0;
 }
 
 .hotel-display {
     background-color: white;
-    height: 100%;
-    position: relative;
 }
+
 /* Map styles */
 #map {
   min-height: 300px;
   width: 100%;
-  /* flex: 1; */
-}
-
-#contact {
-    /* flex: 1; */
-    position: relative;
 }
 
 .map {
     padding: 0 5px;
-    height: 100%;
-    max-height: 300px;
+    /* height: 100%; */
+    /* max-height: 300px; */
 }
 
 .map-display {
     background-color: lightgrey;
     border: 1px solid gray;
-    flex-direction: column;
-    display: flex;
 }
-
-/* .flex-container {
-    
-} */
 
 /* Footer Section */
 .footer {
     height: 150px;
     background-color: rgb(8, 112, 153);
-    bottom: 0px;
+    bottom: -150px;
     width: 100%;
-    /* position: absolute; */
+    position: absolute;
 }
 
 #copyright {
