@@ -1,13 +1,12 @@
-var hotelsArray = [];
-let yelpBusinessSearch = 'businesses/search?location=';
+let yelpBusinessSearch = 'businesses/search?';
 let yelpURL = 'https://api.yelp.com/v3/';
-let yelpHeaders = { headers: { Authorization: "Bearer qlzoMPClc_UIn2xgz5qrVbK6oOcTue-cMV4Yq2Jj0lLXQd-SZAdfeGzXu_fh_62vECy4zEi_T0ixNUpJ_aooGcYfzKiij_1Ydl3fW6j0i2r8Xf-B6NX1GPmMP8AxW3Yx" } }
+let yelpHeaders = { headers: { Authorization: "Bearer qlzoMPClc_UIn2xgz5qrVbK6oOcTue-cMV4Yq2Jj0lLXQd-SZAdfeGzXu_fh_62vECy4zEi_T0ixNUpJ_aooGcYfzKiij_1Ydl3fW6j0i2r8Xf-B6NX1GPmMP8AxW3Yx", "Access-Control-Allow-Origin": "*","Access-Control-Allow-Methods":"GET,PUT,POST,DELETE", "Access-Control-Allow-Headers":"Origin, X-Requested-With, Content-Type, Accept" },  }
 
 
-function yelpDisplay(searchCity) {
+function yelpDisplay(mylat, mylng) {
 
   // const url = `https://api.yelp.com/v3/businesses/search?location=${searchCity}&categories=Food&sort_by=rating`
-  const url = `${yelpURL}${yelpBusinessSearch}${searchCity}&categories=Food&sort_by=rating`
+  const url = `${yelpURL}${yelpBusinessSearch}categories=Food&&latitude=${mylat}&longitude=${mylng}&sort_by=rating&limit=15`
   //console.log(`yelpurl: ${url}`)
 
   $.ajaxPrefilter(function (options) {
@@ -19,6 +18,7 @@ function yelpDisplay(searchCity) {
   // Yelp Search Business and push to DOM
   $.ajax(url, yelpHeaders )
     .then(function (response) {
+      $('#RestaurantsAccordion').empty();
       //console.log('Restaurant', response)
       let business = response.businesses;
       //appends restaurants to accordion body
@@ -50,38 +50,34 @@ function yelpDisplay(searchCity) {
     });
 }
 
-function yelpBusinessIDSearch(searchCity, busName) {
+// Match google places result with yelp lookup
+function yelpBusinessIDSearch(mylat, mylng) {
+  $('#hotelAccordion').empty();
   var settings = {
-    // "async": true,
-    // "crossDomain": true,
-    "url": `https://api.yelp.com/v3/businesses/search?location=${searchCity}&term=${busName}&categories=hotels&limit=1`,
+    "async": true,
+    "crossDomain": true,
+    "url": `https://api.yelp.com/v3/businesses/search?term=hotels&latitude=${mylat}&longitude=${mylng}&sort_by=rating&limit=15`,
     "method": "GET",
     "headers": {
       "Authorization": "Bearer qlzoMPClc_UIn2xgz5qrVbK6oOcTue-cMV4Yq2Jj0lLXQd-SZAdfeGzXu_fh_62vECy4zEi_T0ixNUpJ_aooGcYfzKiij_1Ydl3fW6j0i2r8Xf-B6NX1GPmMP8AxW3Yx",
       "Cache-Control": "no-cache",
-      // "Postman-Token": "dfb5acc5-388c-46f8-bd71-6dfb3e7a1d0d"
+      "Postman-Token": "86622e64-5c93-40fa-bd2e-21aef202b050"
     }
   }
   
   $.ajax(settings).done(function (response) {
     let results = response.businesses[0];
+   
     if (typeof results != 'undefined') {
-      //console.log('hotelsArray', hotelsArray)
-      //console.log('IDSearchResults', results)
       let busID = results.id;
-      //console.log('BusinessID',busID);
       let busName = results.name;
-      //console.log('BusinessName',busName);
       let busImageURL = results.image_url;
-      //console.log('BusinessImage',busImageURL);
       let busAddress = results.location.display_address;
-      //console.log('BusinessAddress',busAddress);
       let busURL = results.url;
-      //console.log('BusinessURL',busURL);
       let busPhone = results.display_phone;
-      //console.log('BusinessPhone',busPhone);
       let busRating = results.rating;
       let busPrice = results.price;
+     
       if (typeof busPrice == 'undefined') { busPrice = 'Not Listed'}
       $('#hotelAccordion').append(`<div class="card">
                     <div class="card-header" id="heading${busID}">
@@ -92,7 +88,7 @@ function yelpBusinessIDSearch(searchCity, busName) {
                       </h5>
                     </div>
                 
-                    <div id="collapse${busID}" class="collapse" aria-labelledby="heading${busID}" data-parent="#accordion">
+                    <div id="collapse${busID}" class="collapse" aria-labelledby="heading${busID}" data-parent="#hotelAccordion">
                       <div class="card-body">
                       <img class= resImg src=${busImageURL} alt= restaurant-image>
                       <ul class="list-group">
@@ -111,71 +107,59 @@ function yelpBusinessIDSearch(searchCity, busName) {
 
 function addResult(result) {
 
-  // call yelpBusinessIDSearch() to get business ID
-  
-  hotelsArray.push(result.name);
-  
   yelpBusinessIDSearch(searchCity, result.name)
 
-  // var results = document.getElementById('hotelAccordion');
-  // var markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
-  // var markerIcon = MARKER_PATH + markerLetter + '.png';
-
-  // var tr = document.createElement('tr');
-  // tr.style.backgroundColor = (i % 2 === 0 ? '#F0F0F0' : '#FFFFFF');
-  // tr.onclick = function() {
-  //   google.maps.event.trigger(markers[i], 'click');
-  // };
-
-  // var iconTd = document.createElement('td');
-  // var nameTd = document.createElement('td');
-  // var icon = document.createElement('img');
-  // icon.src = markerIcon;
-  // icon.setAttribute('class', 'placeIcon');
-  // icon.setAttribute('className', 'placeIcon');
-  // var name = document.createTextNode(result.name);
-  // iconTd.appendChild(icon);
-  // nameTd.appendChild(name);
-  // tr.appendChild(iconTd);
-  // tr.appendChild(nameTd);
-  // results.appendChild(tr);
 }
-// var settings = {
-//   "async": true,
-//   "crossDomain": true,
-//   "url": "https://api.yelp.com/v3/businesses/search?location=La%20Mesa,%20CA,%20USA&term=casa%20la%20mesa&categories=hotels",
-//   "method": "GET",
-//   "headers": {
-//     "Authorization": "Bearer qlzoMPClc_UIn2xgz5qrVbK6oOcTue-cMV4Yq2Jj0lLXQd-SZAdfeGzXu_fh_62vECy4zEi_T0ixNUpJ_aooGcYfzKiij_1Ydl3fW6j0i2r8Xf-B6NX1GPmMP8AxW3Yx",
-//     "Cache-Control": "no-cache",
-//     "Postman-Token": "f5a2a710-7f99-487f-8b60-46e1482e9e0e"
-//   }
-// }
 
-// $.ajax(settings).done(function (response) {
-//   console.log(response);
-// });
-//yelp results based on activities
-//finish later
-// function yelpPOI(){
-//   let searchCity = $('#autocomplete').val();
-//   console.log(searchCity)
-
-//   const url = `https://api.yelp.com/v3/businesses/search?location=${searchCity}`
-//   $.ajaxPrefilter(function (options) {
-//     if (options.crossDomain && $.support.cors) {
-//       options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
-//     }
-//   });
-
-//   // Yelp Search Business and push to DOM
-//   $.ajax(url, { headers: { Authorization: "Bearer qlzoMPClc_UIn2xgz5qrVbK6oOcTue-cMV4Yq2Jj0lLXQd-SZAdfeGzXu_fh_62vECy4zEi_T0ixNUpJ_aooGcYfzKiij_1Ydl3fW6j0i2r8Xf-B6NX1GPmMP8AxW3Yx" } })
-//     .then(function (response) {
-//       console.log(response)
-//       let business = response.businesses;
-
-//     });
-
-// }
-
-// Add function to append point of interests options accordion here
+function yelpPOI(mylat, mylng, poi) {
+  $('#poiAccordion').empty();
+  var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": `https://api.yelp.com/v3/businesses/search?categories=${poi}&latitude=${mylat}&longitude=${mylng}&sort_by=rating&radius=16095`,
+    "method": "GET",
+    "headers": {
+      "Authorization": "Bearer qlzoMPClc_UIn2xgz5qrVbK6oOcTue-cMV4Yq2Jj0lLXQd-SZAdfeGzXu_fh_62vECy4zEi_T0ixNUpJ_aooGcYfzKiij_1Ydl3fW6j0i2r8Xf-B6NX1GPmMP8AxW3Yx",
+      "Cache-Control": "no-cache",
+      "Postman-Token": "40f165dc-8d31-44dd-88de-19a45b756aff"
+    }
+  }
+  
+  $.ajax(settings).done(function (response) {
+    let results = response.businesses[0];
+    if (typeof results != 'undefined') {
+      let busID = results.id;
+      let busName = results.name;
+      let busImageURL = results.image_url;
+      let busAddress = results.location.display_address;
+      let busURL = results.url;
+      let busPhone = results.display_phone;
+      let busRating = results.rating;
+      let busPrice = results.price;
+     
+      if (typeof busPrice == 'undefined') { busPrice = 'Not Listed'}
+      $('#poiAccordion').append(`<div class="card">
+                    <div class="card-header" id="heading${busID}">
+                      <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse${busID}" aria-expanded="true" aria-controls="collapse${busID}">
+                          ${busName} &nbsp;|&nbsp; Rating: ${busRating} &nbsp;|&nbsp;  Price: ${busPrice}
+                        </button>
+                      </h5>
+                    </div>
+                
+                    <div id="collapse${busID}" class="collapse" aria-labelledby="heading${busID}" data-parent="#hotelAccordion">
+                      <div class="card-body">
+                      <img class= resImg src=${busImageURL} alt= restaurant-image>
+                      <ul class="list-group">
+                        <li class="list-group-item">Address: ${busAddress}</li>
+                        <li class="list-group-item">Website: <a href=${busURL}>${busURL}</a></li>
+                        <li class="list-group-item">Phone: ${busPhone}</li>
+                        
+                      </ul>
+                      </div>
+                    </div>
+                  </div>`)
+    }
+    
+  });
+}
