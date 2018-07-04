@@ -88,7 +88,13 @@ function initMap() {
 
   autocomplete.addListener('place_changed', onPlaceChanged);
 
-  map.addListener('center_changed', onPlaceChanged);
+  map.addListener('mouseup', function() {
+    // setTimeout(search(), 3000)
+    search();
+    var mylat = map.getCenter().lat(); 
+    var mylng = map.getCenter().lng();
+    console.log(`Lat: ${mylat}, Lon: ${mylng}`);
+  });
 
   // Add a DOM event listener to react when the user selects a country.
   document.getElementById('country').addEventListener(
@@ -108,15 +114,12 @@ function onPlaceChanged() {
   } else {
     document.getElementById('autocomplete').placeholder = 'Enter a city';
   }
-  searchCity = $('#autocomplete').val();
-  //console.log(`Search City: ${searchCity}`)
-  weatherForcast(searchCity);
-  // yelpDisplay(searchCity);
+  
 }
 
 // Search for hotels in the selected city, within the viewport of the map.
 function search() {
-
+  
   var search = {
     bounds: map.getBounds(),
     types: ['lodging']
@@ -146,6 +149,9 @@ function search() {
       }
     }
   });
+  searchCity = $('#autocomplete').val();
+  weatherForcast(searchCity);
+  yelpDisplay(searchCity);
 }
 
 function clearMarkers() {
