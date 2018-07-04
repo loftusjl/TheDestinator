@@ -121,7 +121,21 @@
                 <a href="#2a" class="btn btn-primary" data-toggle="tab">Restaurants</a>
               </li>
               <li class="mx-auto">
-                <a href="#3a" class="btn btn-primary" data-toggle="tab">Points of Interest</a>
+                <!-- <a href="#3a" class="btn btn-primary" data-toggle="tab">Points of Interest</a> -->
+                <!-- drop down items for point of interest selection -->
+                <div class="dropdown">
+                  <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Points Of Interest
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#3a" value='active'>Active</a>
+                    <a class="dropdown-item" href="#3a" value= 'nightlife'>Night Life</a>
+                    <a class="dropdown-item" href="#3a" value='arts'>Arts</a>
+                    <a class="dropdown-item" href="#3a" value='beautysvc'>Beauty and Spa</a>
+                    <a class="dropdown-item" href="#3a" value='shopping'>Shopping</a>
+                    
+                  </div>
+                </div>
               </li>
             </ul>
 

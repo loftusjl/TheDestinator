@@ -177,3 +177,5 @@ function addResult(result) {
 //     });
 
 // }
+
+// Add function to append point of interests options accordion here
