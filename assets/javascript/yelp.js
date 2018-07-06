@@ -39,7 +39,7 @@ function yelpDisplay(mylat, mylng) {
                     <ul class="list-group">
                       <li class="list-group-item">Type: ${business[i].categories[0].title}</li>
                       <li class="list-group-item">Address: ${business[i].location.display_address}</li>
-                      <li class="list-group-item">Website: <a href=${business[i].url}>${business[i].url}</a></li>
+                      <li class="list-group-item">Website: <a href=${business[i].url} target="_blank">${business[i].name}</a></li>
                       <li class="list-group-item">Phone: ${business[i].display_phone}</li>
                       
                     </ul>
@@ -93,7 +93,7 @@ function yelpBusinessIDSearch(searchCity, name) {
                       <img class= resImg src=${busImageURL} alt= hotel-image>
                       <ul class="list-group">
                         <li class="list-group-item">Address: ${busAddress}</li>
-                        <li class="list-group-item">Website: <a href=${busURL}>${busURL}</a></li>
+                        <li class="list-group-item">Website: <a href=${busURL} target="_blank">${busName}</a></li>
                         <li class="list-group-item">Phone: ${busPhone}</li>
                         
                       </ul>
@@ -154,7 +154,7 @@ function yelpPOI(mylat, mylng, poi) {
                       <ul class="list-group">
                         <li class="list-group-item">Type: ${response.businesses[i].categories[0].title}</li>
                         <li class="list-group-item">Address: ${busAddress}</li>
-                        <li class="list-group-item">Website: <a href=${busURL}>${busURL}</a></li>
+                        <li class="list-group-item">Website: <a href=${busURL} target="_blank">${busName}</a></li>
                         <li class="list-group-item">Phone: ${busPhone}</li>
                         
                       </ul>
