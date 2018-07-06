@@ -33,7 +33,7 @@ function yelpDisplay(mylat, mylng) {
                     </h5>
                   </div>
               
-                  <div id="collapse${i}" class="collapse" aria-labelledby="heading${i}" data-parent="#accordion">
+                  <div id="collapse${i}" class="collapse" aria-labelledby="heading${i}" data-parent="#RestaurantsAccordion">
                     <div class="card-body">
                     <img class= resImg src=${business[i].image_url} alt= restaurant-image>
                     <ul class="list-group">
