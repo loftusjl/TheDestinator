@@ -76,6 +76,7 @@ body {
 .weather-display {
     margin-bottom: 10px;
     padding: 0;
+    background: url(../images/vintage-concrete.png);
 }
 
 .weather {
@@ -100,7 +101,7 @@ body {
 
 .days {
     flex: 1;
-    border: rgb(99, 99, 99) solid .5px;
+    /* border: rgb(99, 99, 99) solid .5px; */
 }
 
 .search-panel {
@@ -115,6 +116,7 @@ body {
 
 /* Image Display Panel */
 /* Tabs */
+
 #resultsTable:hover {
     cursor: pointer;
 }
@@ -200,10 +202,6 @@ body {
     padding: 0;
 }
 
-.hotel-display {
-    background-color: white;
-}
-
 /* Map styles */
 #map {
   min-height: 300px;
@@ -258,7 +256,11 @@ body {
 /* styling for dynamic images in accordion */
 .resImg {
     width: 250px;
+}
 
+/* Overwrites bootstrap css */
+.card {
+    background: rgba(0, 0, 0, 0);
 }
 
 /* @media screen and (min-height: 700px) {
