@@ -38,9 +38,15 @@ body {
 .header {
     margin-bottom: 0;
     background-image: url("../images/beach.gif");
-    backdrop-filter: blur(13px);
+    /* backdrop-filter: blur(13px); */
     /* Full height */
-    height: 250px; 
+    height: 300px; 
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom: 2px solid rgba(148, 230, 217, .5);
+    border-left: 2px solid rgba(148, 230, 217, .5);
+    border-right: 2px solid rgba(148, 230, 217, .5);
+    box-shadow: 3px 3px 5px slategray;
 
     /* Center and scale the image nicely */
     background-position: center;
@@ -66,7 +72,13 @@ body {
 }
 
 /* Main content */
+.main-content,
+.top-banner {
+    background: rgba(242, 242, 242, .4);
+}
+
 .main-content {
+    padding-top: 20px;
     background: rgba(242, 242, 242, .4);
 }
 /* Search Bar Section */
@@ -138,6 +150,10 @@ body {
     height: 100%;
 }
 
+.round-edges {
+    border-radius: 5px;
+}
+
 .bg-color {
     background-color: rgba(148, 230, 217, .5);
 }
@@ -171,19 +187,20 @@ body {
     font-family: 'Poppins';
 }
 
-.poi-btns {
-    position: fixed;
+.poi-btn {
+    background-color: rgba(50, 190, 255, .7);
+    border: 1px solid rgb(50, 190, 255);
+    color: white;
+    text-shadow: 1px 1px 3px gray;
+}
+
+.poi-btn:hover {
+    color: white;
 }
 
 .tab-pane {
     width: 100%;
 }
-
-.image-panel {
-    /* Temporary background holder */
-    /* background-color: white; */
-}
-
 
 #fun-fact {
     padding: 30px 10px;
@@ -232,7 +249,7 @@ body {
 /* Footer Section */
 .footer {
     height: 150px;
-    background-color: rgb(8, 112, 153);
+    background: linear-gradient(rgb(8, 112, 153) 60%, white);
     bottom: -150px;
     width: 100%;
     position: absolute;
@@ -245,6 +262,7 @@ body {
 
 .devs {
     text-align: center;
+    text-shadow: 1px 1px 3px black;
 }
 
 .devs p {
@@ -252,6 +270,11 @@ body {
     display: inline-block;
     margin-right: 10px;
     margin-left: 10px;
+}
+
+#terminator {
+    font-family: 'Gaegu';
+    text-align: right;
 }
 /* styling for dynamic images in accordion */
 .resImg {
@@ -266,11 +289,6 @@ body {
 .nav-link {
     overflow: hidden;
     text-overflow: ellipsis;
-}
-#poiAccordion h5 {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    overflow-x: scroll;
 }
 
 /* Overwrites bootstrap css */
