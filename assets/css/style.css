@@ -229,7 +229,16 @@ body {
     width: 250px;
 
 }
-
+/* the .nav links to prevent overflow from container */
+.nav-link {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#poiAccordion h5 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    overflow-x: scroll;
+}
 /* @media screen and (min-height: 700px) {
     .tab-content {
         height: 200px;
