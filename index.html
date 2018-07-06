@@ -45,11 +45,11 @@
           <div class="card card-primary" style="width:100%;">
             <div class="card-heading">
               <div class="card-title mb-0">
-                <div class='row weather' >
+                <div class='row weather'>
                   <h4 class='col' style='display:flex; align-items: center; min-height: 50px; '>5 Day Forecast</h4>
                   <h4 id='current-temp' class='col' style='display: flex; justify-content: flex-end; align-items: center;'></h4>
                 </div>
-            </div>
+              </div>
             </div>
             <div class='row weather' style=' min-height: 173px;'>
               <div class="card-body days col">
@@ -122,10 +122,10 @@
               <li class="mx-auto">
                 <a href="#3a" class="btn highlight" data-toggle="tab">Points of Interest</a>
                 <!-- drop down items for point of interest selection -->
-
+                </li>
+                </ul>
           </div>
-          </li>
-          </ul>
+          
 
           <div class="tab-content clearfix">
             <div class="tab-pane active" id="1a">
@@ -173,6 +173,9 @@
             <div class="tab-pane" id="3a">
               <div class="container">
                 <div class="row">
+                  <div class="col-9" id="poiAccordion">
+                    <!-- POINT OF INTEREST ACCORDION -->
+                  </div>
                   <div class="col-3">
                     <ul class="nav flex-column nav-pills">
                       <li class="nav-item">
@@ -192,9 +195,9 @@
                       </li>
                     </ul>
                   </div>
-                  <div class="col-9" id="poiAccordion">
+                  <!-- <div class="col-9" id="poiAccordion">
                     <!-- POINT OF INTEREST ACCORDION -->
-                  </div>
+                  <!-- </div> --> 
                 </div>
               </div>
             </div>
@@ -211,11 +214,15 @@
           </div>
           <div id="contact">
             <form>
+
                 <h5>Contact Us</h5>
                 <input type="text" class="form-control" id="enterName" placeholder="Enter Name">
                 <input type="email" class="form-control" id="enterEmail" aria-describedby="emailHelp" placeholder="Enter email">
                 <textarea class="form-control" id="enterComment" placeholder="Comment"></textarea>
                 <button type="submit" class="btn highlight">Submit</button>
+
+              
+
             </form>
           </div>
         </div>
@@ -223,25 +230,25 @@
     </div>
 
 
-      <!-- Footer -->
-      <div class="footer">
-        <p id="copyright">Puff Puff Parse &copy;</p>
-        <div class="devs">
-          <a href="#">
-            <p>Adam F.</p>
-          </a>
-          <a href="#">
-            <p>Calvin W.</p>
-          </a>
-          <a href="#">
-            <p>Jesse L.</p>
-          </a>
-          <a href="#">
-            <p>Kerry T.</p>
-          </a>
-        </div>
+    <!-- Footer -->
+    <div class="footer">
+      <p id="copyright">Puff Puff Parse &copy;</p>
+      <div class="devs">
+        <a href="#">
+          <p>Adam F.</p>
+        </a>
+        <a href="#">
+          <p>Calvin W.</p>
+        </a>
+        <a href="#">
+          <p>Jesse L.</p>
+        </a>
+        <a href="#">
+          <p>Kerry T.</p>
+        </a>
       </div>
     </div>
+  </div>
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
