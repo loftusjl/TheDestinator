@@ -36,10 +36,4 @@ $('#contact-submit').on('click', function() {
   $('#enterName').val('');
   $('#enterEmail').val('');
   $('#enterComment').val('');
-})// Fake contact form
-// Clear input value
-$('#contact-submit').on('click', function() {
-  $('#enterName').val('');
-  $('#enterEmail').val('');
-  $('#enterComment').val('');
 })
