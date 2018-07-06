@@ -71,6 +71,8 @@ body {
 }
 /* Search Bar Section */
 /* Search panel */
+
+/* Weather display */
 .weather-display {
     margin-bottom: 10px;
     padding: 0;
@@ -80,8 +82,21 @@ body {
     display: flex;
     text-align: center;
     background-color: rgba(167, 192, 238, 0.76);
-
 }
+
+.weather-style {
+    display: flex;
+    align-items: center;
+    min-height: 50px;
+}
+
+#current-temp {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* --------- */
 
 .days {
     flex: 1;
@@ -144,12 +159,18 @@ body {
 
 .tab-content {
     overflow-y: scroll;
+    margin-bottom: 20px;
 }
 
 #hotelAccordion,
-#RestaurantsAccordion {
+#RestaurantsAccordion,
+#poiAccordion {
     max-height: 700px;
     font-family: 'Poppins';
+}
+
+.poi-btns {
+    position: fixed;
 }
 
 .tab-pane {
@@ -198,6 +219,16 @@ body {
 .map-display {
     background-color: lightgrey;
     border: 1px solid gray;
+}
+
+#contact {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#contact input,
+#contact textarea {
+    margin-bottom: 10px;
 }
 
 /* Footer Section */
