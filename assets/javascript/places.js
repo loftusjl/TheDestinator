@@ -118,7 +118,11 @@ function onPlaceChanged() {
   } else {
     document.getElementById('autocomplete').placeholder = 'Enter a city';
   }
-  
+  // USER INPUT VALIDATION
+  $('.modal-body').empty();
+  $("#confirm-modal").modal("show");
+  searchCity = $('#autocomplete').val();
+  $('.modal-body').append(`<p>You have chosen ${searchCity}!!</p>`);
 }
 
 // Search for hotels in the selected city, within the viewport of the map.
