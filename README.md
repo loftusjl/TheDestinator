@@ -2,6 +2,8 @@
 
 A travel site to suggest activities located around chosen destinations. Includes attractions, lodging, and weather forecast.
 
+**Presentation Link**(https://docs.google.com/presentation/d/1QCLKiuqJkKk7Piys3nXjkufjK5kzT1B0veBNetwEQcE/edit?usp=sharing)
+
 ## Motto: 
 
 “One-stop shop for all your travel needs! You’ll be saying “I’ll be back”"
