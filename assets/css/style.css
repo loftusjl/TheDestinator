@@ -101,6 +101,12 @@ body {
     display: flex;
     align-items: center;
     min-height: 50px;
+    font-family: 'Knewave';
+}
+
+.arvo {
+    font-family: 'Arvo';
+    font-weight: bold;
 }
 
 #current-temp {
@@ -109,13 +115,11 @@ body {
     align-items: center;
 }
 
-/* --------- */
-
 .days {
     flex: 1;
     /* border: rgb(99, 99, 99) solid .5px; */
 }
-
+/* --------- */
 .search-panel {
     min-height: 130px;
 }
@@ -123,6 +127,10 @@ body {
 #location {
     padding-top: 50px;
     padding-left: 30px;
+}
+
+.location-form {
+    margin-bottom: 10px;
 }
 
 
@@ -277,8 +285,16 @@ body {
     text-align: right;
 }
 /* styling for dynamic images in accordion */
+/* .box-form {
+    display: flex;
+} */
+
 .resImg {
-    width: 250px;
+    max-width: 250px;
+    max-height: 250px;
+    float: left;
+    margin-bottom: 10px;
+    margin-right: 10px;
 }
 
 /* Overwrites bootstrap css */
@@ -296,6 +312,22 @@ body {
 .list-group-item {
     background: rgba(0, 0, 0, 0);
 }
+
+/* .list-group {
+    float: right;
+} */
+
+/* @media screen and (min-height: 424px) {
+    .display-4 {
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (max-height: 425px) {
+    .display-4 {
+        font-size: 3.5rem;
+    }
+} */
 
 /* @media screen and (min-height: 700px) {
     .tab-content {
