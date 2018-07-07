@@ -25,8 +25,31 @@ function weatherForcast(searchCity) {
     .then(function (weatherForecast) {
       let dailyForecast = weatherForecast.list;
       let temperatureArray = []
+      let tempMax = []
+      // for (j = 0; j < dailyForecast.length; j++) {
+      //   tempMax.push({
 
-      for (i = 0; i < dailyForecast.length; i+=8) {
+      //     max: dailyForecast[j].main.temp_max,
+
+      //   })
+      //   console.log(tempMax)
+      // }
+      function largestOfFour() {
+
+        for (k = 0; k < dailyForecast.length; k++) {
+          var long = 0;
+          for (i = 0; i < dailyForecast[k].length; i++) {
+            if (long < dailyForecast[k][i]) {
+              long = dailyForecast[k][i];
+            }
+          }
+          tempMax.push(long);
+        }
+        console.log(tempMax)
+        return tempMax;
+      }
+      largestOfFour()
+      for (i = 0; i < dailyForecast.length; i += 8) {
         let day = moment(dailyForecast[i].dt_txt).format('ddd')
         let hour = moment(dailyForecast[i].dt_txt).format('HH')
         temperatureArray.push({
@@ -35,7 +58,7 @@ function weatherForcast(searchCity) {
           tempMin: dailyForecast[i].main.temp_min,
           icon: '<img src=http://openweathermap.org/img/w/' + dailyForecast[i].weather[0].icon + '.png>'
         })
-        
+
       }
       $(".day1").html(temperatureArray[0].days + " " + temperatureArray[0].icon + "<br>" + "Low: " + temperatureArray[0].tempMin + " " + "High: " + temperatureArray[0].tempMax);
       $(".day2").html(temperatureArray[1].days + " " + temperatureArray[1].icon + "<br>" + "Low: " + temperatureArray[1].tempMin + " " + "High: " + temperatureArray[1].tempMax);
@@ -43,16 +66,5 @@ function weatherForcast(searchCity) {
       $(".day4").html(temperatureArray[3].days + " " + temperatureArray[3].icon + "<br>" + "Low: " + temperatureArray[3].tempMin + " " + "High: " + temperatureArray[3].tempMax);
       $(".day5").html(temperatureArray[4].days + " " + temperatureArray[4].icon + "<br>" + "Low: " + temperatureArray[4].tempMin + " " + "High: " + temperatureArray[4].tempMax);
       console.log(temperatureArray)
-      //temperatureArray.filter(dayFilter(i))
-      //console.log('Temperature Array', temperatureArray.filter(dayFilter(i)))
-
-        //Math.max(temperatureArray.filter(tempMax))
-        //Math.min(temperatureArray.filter(tempMin))
-      
     })
-
-
-
-
-
 }
